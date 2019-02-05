@@ -4,7 +4,7 @@ Create a `Hash Table` (with 26 buckets) and a `Node` using the `class keyword` a
 
 For demo purposes, the hash function should take the first letter of the key and store the key/value data in the proper bucket (or cell). _There´s not going to be real hash_. Feel free to do it!
 
-You will have one bucket per letter of the Alphabet.
+Note: You will have one bucket per letter of the Alphabet.
 For example:
 
 ```
@@ -13,7 +13,7 @@ B >> 1
 C >> 2
 ```
 
-Add a collision.
+Be sure that you add one collision.
 
 ## Solution:
 
@@ -83,6 +83,52 @@ console.log(HT);
 ## Result:
 
 Time may vary in relation to the processes running on your machine.
+
+```
+HasthTable {
+  buckets:
+   [ Node { key: 'a', value: 'Hello', next: [Object] },
+     <1 empty item>,
+     Node { key: 'casa', value: 'Casa Grande', next: null },
+     <23 empty items> ],
+  numberOfBuckets: 26 }
+```
+
+---
+
+Before, we were using strings as inputs (arguments) for the method HT.add(s,s) and repeating the process of inserting a Node.
+
+Now, given an object, create 2 arrays: one with its keys, the other with its values. It is safe to assume that both key and value are always going to be something.
+
+Then, iterate and execute the HT.add(s,s) function for each piece o data.
+
+## Possible solution:
+
+```javascript
+let obj = {
+  Casa: 'Casa Grande',
+  A: 'Hello',
+  Adding: 'Adding collision'
+};
+
+// obj with keys
+const objKeys = Object.keys(obj);
+const objValues = Object.values(obj);
+
+if (objKeys.length !== objValues.length) {
+  console.log('Something went wrong!');
+}
+
+let HT = new HasthTable(26);
+
+for (let i = 0; i < objKeys.length; i++) {
+  HT.add(objKeys[i], objValues[i]);
+}
+
+console.log(HT);
+```
+
+## Result:
 
 ```
 HasthTable {
