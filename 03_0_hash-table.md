@@ -63,6 +63,7 @@ HasthTable.prototype.add = function(key, value) {
 
   else {
     const currentNode = this.buckets[bucketIndex];
+
     while (currentNode.next) {
       currentNode = currentNode.next;
     }
@@ -138,4 +139,105 @@ HasthTable {
      Node { key: 'casa', value: 'Casa Grande', next: null },
      <23 empty items> ],
   numberOfBuckets: 26 }
+```
+
+---
+
+Create a method that takes an argument (string) and retrieves the proper value related to that key.
+HT.get('Adding') should return 'Adding collision'.
+
+## Solution:
+
+```javascript
+HasthTable.prototype.get = function(key) {
+  key = key.toLowerCase();
+  const bucketIndex = this.hash(key);
+
+  // If the bucket is empty
+  if (!this.buckets[bucketIndex]) {
+    return null;
+  } else {
+    let currentNode = this.buckets[bucketIndex];
+    while (currentNode) {
+      if (currentNode.key === key) return currentNode.value;
+      currentNode = currentNode.next;
+    }
+
+    return null;
+  }
+};
+
+HT.get('Adding');
+```
+
+## Result:
+
+```
+'Adding collision'
+```
+
+---
+
+Create a method to retrieve all the nodes in the Hash Table. The result should be a multi array where each sub-array hash as first element `Bucket number`
+
+Example:
+HT.getAll() should retrieve the entire array of arrays
+HT.getAll()[0] should retrieve the bucket 0 array
+HT.getAll()[0][0] should retrieve `'Bucket 0'`
+HT.getAll()[0][1] should retrieve `Node { key: 'a', value: 'Hello', next: Node { key: 'adding', value: 'Adding collision', next: null } }`
+HT.getAll()[0][2] should retrieve `Node { key: 'adding', value: 'Adding collision', next: null }`
+
+## Solution :
+
+```javascript
+HasthTable.prototype.getAll = function() {
+  let nodes = [];
+
+  for (let i = 0; i < this.numberOfBuckets; i++) {
+    let currentNode = this.buckets[i];
+
+    nodes.push(['Bucket ' + i]);
+
+    while (currentNode) {
+      nodes[this.hash(currentNode.key)].push(currentNode);
+
+      currentNode = currentNode.next;
+    }
+  }
+  return nodes;
+};
+```
+
+## Result:
+
+```
+[ [ 'Bucket 0',
+    Node { key: 'a', value: 'Hello', next: [Node] },
+    Node { key: 'adding', value: 'Adding collision', next: null } ],
+  [ 'Bucket 1' ],
+  [ 'Bucket 2' ],
+  [ 'Bucket 3' ],
+  [ 'Bucket 4' ],
+  [ 'Bucket 5' ],
+  [ 'Bucket 6' ],
+  [ 'Bucket 7' ],
+  [ 'Bucket 8' ],
+  [ 'Bucket 9' ],
+  [ 'Bucket 10' ],
+  [ 'Bucket 11' ],
+  [ 'Bucket 12' ],
+  [ 'Bucket 13' ],
+  [ 'Bucket 14' ],
+  [ 'Bucket 15',
+    Node { key: 'pasa', value: 'Casa Grande', next: null } ],
+  [ 'Bucket 16' ],
+  [ 'Bucket 17' ],
+  [ 'Bucket 18' ],
+  [ 'Bucket 19' ],
+  [ 'Bucket 20' ],
+  [ 'Bucket 21' ],
+  [ 'Bucket 22' ],
+  [ 'Bucket 23' ],
+  [ 'Bucket 24' ],
+  [ 'Bucket 25' ] ]
 ```
