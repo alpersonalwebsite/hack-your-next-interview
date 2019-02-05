@@ -1,4 +1,4 @@
-# Binary Search Tree
+# Hash Table
 
 Create a `Hash Table` (with 26 buckets) and a `Node` using the `class keyword` and add through the Hash Table prototype a function to insert/add a Node previously "hashed".
 
