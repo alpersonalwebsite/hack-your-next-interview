@@ -1,8 +1,19 @@
 # Binary Search Tree
 
-Create a Hash Table (with 26 buckets) and a Node using the class keyword and add through the Hash Table prototype a function to inset/add a Node previously "hashed".
+Create a `Hash Table` (with 26 buckets) and a `Node` using the `class keyword` and add through the Hash Table prototype a function to insert/add a Node previously "hashed".
 
-For demo purposes, the the hash function should take the first letter of the key and store the key/value data in the proper bucket (or cell).
+For demo purposes, the hash function should take the first letter of the key and store the key/value data in the proper bucket (or cell). _There´s not going to be real hash_. Feel free to do it!
+
+You will have one bucket per letter of the Alphabet.
+For example:
+
+```
+A >> 0
+B >> 1
+C >> 2
+```
+
+Add a collision.
 
 ## Solution:
 
