@@ -6,3 +6,13 @@ First, because I do believe that one should create his/her own career (no one be
 
 Second, because I don´t want to be like a sham ornament on display waiting for a good soul to take me home.
 There are different stages in life. Now, after working for a prudential time, I can be a little picky and pull apart as much time as I need to make the proper research of each company. If you don´t have greater pressures, I strongly recommend you to do this. Maybe, it is not going to pay-you-back at short term, nevertheless It will do it in an incremental way and, mainly, it will constitute your best investment and your bigger asset: “Knowledge is Power” (Sir Francis Bacon?)
+
+In this repo, I will be sharing some recurrent topics, "code exercises" and experiences (some crazy ones as colorful notes will also be included) to contribute at your time of "going through the Interview Process".
+
+**Important note:** This is an ongoing work among several others so there´s no periodicity commitment.
+
+---
+
+## Index
+
+1. [Useful methods](./00_0_useful-methods.md)
