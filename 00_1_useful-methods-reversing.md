@@ -25,7 +25,7 @@ gnirts a m'I
 ## Solution 2
 The previous example is probably what you would do in a real non-interview context.
 However, your interviewer could want a "looping solution". This and the next 2 examples, are going to be based on iterations.
-For this one, we are also converting into an array, then going through each element with `map()` and adding each element to the start of the array with `unshift()`. Then, we `join()` the string and return it. 
+For this one, we are also converting into an array, then going through each element with `map()` and adding each element to the start of the array with `unshift()`. Then, we `join()` the string and return it.
 
 Example:
 ```javascript
@@ -40,6 +40,50 @@ const reverse2 = (str) => {
 }
 
 console.log(reverse2(str))
+```
+
+Result:
+```
+gnirts a m'I
+```
+
+## Solution 3
+Before, we were converting (casting?) our string input into an array. Totally valid! But, we can avoid that steep and loop each element of the string adding it to the start of a new namespace that would be the return of our function.
+This is the conventional for loop solution approach.
+
+Example:
+```javascript
+const reverse3 = (str) => {
+  let results = '';
+  for(let i = 0; i < str.length; i++) {
+    results = str[i] + results;
+  }
+  return results;
+}
+
+console.log(reverse3(str))
+```
+
+Result:
+```
+gnirts a m'I
+```
+
+## Solution 4
+This is similar to the previous example, but using the elegant syntax of `for...of`.
+If you don´t need to move "your pointer" several indexes (for example i + 2) on each iteration, this should be the preferred solution.
+
+Example:
+```javascript
+const reverse4 = (str) => {
+  let results = '';
+  for(char of str) {
+    results = char + results;
+  }
+  return results;
+}
+
+console.log(reverse4(str))
 ```
 
 Result:
