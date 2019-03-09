@@ -17,6 +17,7 @@ In this repo, I will be sharing some recurrent topics, "code exercises" and expe
 ## The Interview Process
 
 I should start stating the obvious: each Company is a unique world, and in consequence, every process is different. However, usually you have 4 common steps:
+
 1. First approach: vacancy presentation, highlight of "Core Values or Principles" (from both sides) and advice. This step is mainly humanistic and presentational. There are no right/wrong answers.
 Expected time: less than 30 minutes.
 
