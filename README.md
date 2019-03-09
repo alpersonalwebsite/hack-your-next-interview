@@ -18,30 +18,49 @@ In this repo, I will be sharing some recurrent topics, "code exercises" and expe
 
 I should start stating the obvious: each Company is a unique world, and in consequence, every process is different. However, usually you have 4 common steps:
 
-1. First approach: vacancy presentation, highlight of "Core Values or Principles" (from both sides) and advice. This step is mainly humanistic and presentational. There are no right/wrong answers.
+1. **First approach**: vacancy presentation, highlight of "Core Values or Principles" (from both sides) and advice. This step is mainly humanistic and presentational. There are no right/wrong answers.
 Expected time: less than 30 minutes.
 
-2. First technical screening: generally, you have to answer questions related to your experience and knowledge of the technologies (languages, platforms, services, libraries, tools...) linked to the "job description". This is the real first filter and it should show if you really know what you think and if you do it in the right way (good practices and patterns).
+2. **First technical screening**: generally, you have to answer questions related to your experience and knowledge of the technologies (languages, platforms, services, libraries, tools...) linked to the "job description". This is the real first filter and it should show if you really know what you think and if you do it in the right way (good practices and patterns).
 Expected time: no more than 1 hour, commonly 30 minutes.
 
-3. Second technical screening: this is a little more intense than the previous one. You should expect "code exercises" (like Fibonacci, reversing strings, palindromes...), "define which would be the output" (like console.log() and setTimeout()), MVC such as building a small SPA with one of JS framework (like a TO-DO list with React), "pair programming". From all the interviews steps, this one normally is the definitive but not the last.
+3. **Second technical screening**: this is a little more intense than the previous one. You should expect "code exercises" (like Fibonacci, reversing strings, palindromes...), "define which would be the output" (like console.log() and setTimeout()), MVC such as building a small SPA with one of JS framework (like a TO-DO list with React), "pair programming". From all the interviews steps, this one normally is the definitive but not the last.
 Expected time: around 1 hour.
 
-4. On-site interview: Great news! If you got to this point, probably you will receive an offer.
+4. **On-site interview**: Great news! If you got to this point, probably you will receive an offer.
 Expected time: most of the companies will have you around 5 hours, however, there is an growing number of enterprises that have adopted the 2.30 hs model. We do appreciate these last!
 
   But, let´s fragment this part of the procedure.
 
-  a. Presentation and pseudo-interview with someone from HR or People Department
+  a. *Presentation* and pseudo-interview with someone from HR or People Department
 
-  b. Interview with DevOps Team, Developers or FullStack (here you can expect more conversational questions)
+  b. Interview with *DevOps Team*, Developers or FullStack (here you can expect more conversational questions)
 
-  c. Interview with Product Team
+  c. Interview with *Product Team*
 
-  d. Interview with Developers or FullStack (here you can expect more technical questions, have to code something, whiteboard and... Algorithms!)
+  d. Interview with *Developers or FullStack* (here you can expect more technical questions, have to code something, whiteboard and... Algorithms!)
 
-  e. Interview with the Hiring Manager (aka, your Boss).
+  e. Interview with the *Hiring Manager* (aka, your Boss).
+
 ---
+
+## Red Flags
+
+I always say I´m interviewing the Company (and, in consequence, them) as they do it with me; perhaps, in an even deeper way. You should do the same! Remember that Interviews are a dual process and you should dispel all your doubts.
+
+What are "Red Flags"...?
+For me, behaviors that go against my principles, manners or that could affect the daily work relationship or "workspace peace".
+
+1. When they don´t look at your eyes or express tension through their bodies
+2. When there is no racial/cultural mixture
+3. When those chosen to interview you seem unprepared
+4. When they try to show you how good they are or set some kind of "minimum bar"
+5. When the technical people commit technical mistakes
+6. When they don´t have a clear schedule pre-shared letting you know who are going to interview them, what positions they hold and the proper timeline for each interview
+7. When you asked about the Company and all the emphasis is on the technological flank, without meaningful mentions to the **Company Culture and Values**
+
+---
+
 ## Index
 
 1. [Useful methods](./00_0_useful-methods.md)
