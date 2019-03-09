@@ -1,6 +1,7 @@
 # Reversing: strings or arrays
-
-TO DO: Description or intro...
+Examples:
+* String > Hello should return olleH
+* Array > [1,2,3] should return [3,2,1]
 
 ## Solution 1
 Since we are going to reverse using the `reverse()` array method we need first to convert our string into an array.
