@@ -14,6 +14,31 @@ In this repo, I will be sharing some recurrent topics, "code exercises" and expe
 
 ---
 
+## Brief personal advice
+
+No matter HOW much you like the vacancy and your interviewers, and probably against the "wise general guidance", I strongly recommend you to generate some kind of "friction" or "conflict" with whom would be your co-workers during the on-site meeting.
+Yes, yes... I´m pretty sure you are convinced that I finally went crazy, nonetheless, gift me a couple more lines to explain "my point".
+
+We, humans, are complex and fluctuating beings. Accept it or perish!
+That swing, when it is properly well-balanced constitutes one of the central axes of Evolution: "change".
+Sometimes we are happy, others sad...
+Sometimes cheerful, sometimes grumpy... And, even when this concerns us all equally, from your side you should think: "I will spend at least 8hs. per day with these people. What will be their behavior(s) in adverse situations or just personal "bad days"...?"
+Does this start to make sense...?
+Because adversities always come, and your case, will not be the exception.
+
+When you start a new job, probably (and hopefully) the persons who have been working for x-time there, are going to be "more proficient than you" in several aspects/tasks/situations. This is not strange: they created the programs, set the stack, know the tricky parts of their environments and tools, even  those that have a halo of mystery around them. Regardless how qualified you are, the TEAM is always going to have well-deserved advantage (we should all be glad about this conjuncture inasmuch as it protects the whole from "mad managers" casting the legacy remark in sustainability).
+
+In a regular interview process, they will try to expose you to some bitter moments just to see how you handle both: positive and negative human feelings, for example, frustration.
+But, when are you going to have the opportunity to test them equally..? Know how would they react when things are not going as expected and discomfort manifests in all its fullness.  
+Once you have been hired...? Once you are sunk in other bitterness typing a quickly 2-weeks-notice...? That´s too late! Fail is part of our human condition, but, you must take certain precautions if you want to find a nice human group and avoid toxic environments.
+
+
+
+
+
+
+---
+
 ## The Interview Process
 
 I should start stating the obvious: each Company is a unique world, and in consequence, every process is different. However, usually you have 4 common steps:
@@ -40,15 +65,11 @@ Expected time: *most of the companies will have you around 5 hours, however, the
   d. Interview with **Developers or FullStack** (your co-workers). Here you can expect more technical questions, have to write some code, whiteboard and... Algorithms! From a strictly human POV, you can find 4 types of groups (or particulars):
 
     1. **Egocentric or insecure** (self-centered people are firstly, insecure). They will try to show you how wrong you are and how well-versed they are in opposition. For this group or person, there is no Interview, if not, preserve the status-quo. The more knowledgeable you show, the more reactive they will be. If they feel threatened in their knowledge, they are going to be your first detractors.
+    2. **Unprepared**. You will see them coming with a crumpled paper, asking for your resume (yes, the one that you sent them previously 2 or 3 times) and jumping to some "JSFiddle/CodePen/JSBIN" exercise coded by other member of the Team and/or copied/pasted from some "interview coding exercises" search result.
+    3. **High bar**. Big companies with the "Culture of Selectivity", like Google, usually ends in this bucket. They are aware they are building "the Path" so, even when they are not totally sure of what are they looking, they do know they want the best. Here reigns the logic of the less, the better.
+    4. **Unifiers**. Generally, smart people holding real power inside the Company. They care about the enterprise they represent and try to hire individuals as prepared as them understanding they are betting on the future (your future). Mentors are a great example. They don´t care about mistakes if not how are you reasoning. These are the cases where candidates feel their performance was really bad, however, they receive -indistinctly- an offer.
 
-    2. **Unprepared** You will see them coming with a crumpled paper, asking for your resume (yes, the one that you sent them previously 2 or 3 times) and jumping to some "JSFiddle/CodePen/JSBIN" exercise coded by other member of the Team and/or copied/pasted from some "interview coding exercises" search result.
-
-    3. **High bar** Big companies with the "Culture of Selectivity", like Google, usually ends in this bucket. They are aware they are building "the Path" so, even when they are not totally sure of what are they looking, they do know they want the best. Here reigns the logic of the less, the better.
-
-    4. **Unifiers** Generally, smart people holding real power inside the Company. They care about the enterprise they represent and try to hire individuals as prepared as them understanding they are betting on the future (your future). Mentors are a great example. They don´t care about mistakes if not how are you reasoning. These are the cases where candidates feel their performance was really bad, however, they receive -indistinctly- an offer.
-
-  e. Interview with the *Hiring Manager* (aka, your Boss).
-
+  e. Interview with the **Hiring Manager** (aka, your Boss). One of the greatest abilities of Officers is to delegate.
 ---
 
 ## Red Flags
@@ -64,15 +85,15 @@ For me, behaviors that go against my principles, manners or that could affect th
 4. When they try to show you how good they are or set some kind of "minimum bar"
 5. When the technical people commit technical mistakes
 6. When they don´t have a clear schedule pre-shared letting you know who are going to interview them, what positions they hold and the proper timeline for each interview
-7. When you asked about the Company and all the emphasis is on the technological flank, without meaningful mentions to the **Company Culture and Values**
+7. When you asked about the Company and all the emphasis is on the technological flank, witho}ut meaningful mentions to the **Company Culture and Values**
 
 ---
 
 ## Index
 
 1. [Useful methods](./00_0_useful-methods.md)
-  1. [Reversing without reverse() method](./00_1_useful-methods-reversing.md)
-  2. [Sorting without sort() method](00_1_useful-methods-sorting.md)
+    1. [Reversing without reverse() method](./00_1_useful-methods-reversing.md)
+    2. [Sorting without sort() method](00_1_useful-methods-sorting.md)
 2. [Basic ES2015 or ES6](./00_0_basic-es2015.md)
 3. Algorithms
-  1. [Queue and Stack](../data-structures/05_0_queue-and-stack.md)
+    1. [Queue and Stack](data-structures/05_0_queue-and-stack.md)
