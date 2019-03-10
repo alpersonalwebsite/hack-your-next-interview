@@ -55,21 +55,21 @@ Expected time: *around 1 hour*.
 4. **On-site interview**: Great news! If you got to this point, probably you will receive an offer.
 Expected time: *most of the companies will have you around 5 hours, however, there is a growing number of enterprises that have adopted the 2.30 hs model*. We do appreciate these last!
 
-  a. **Presentation** and pseudo-interview with someone from HR or People Department explaining the process.  
+  * **Presentation** and pseudo-interview with someone from HR or People Department explaining the process.  
 
-  b. Interview with **DevOps Team or Sennior Devs**, Developers or FullStack (here you can expect more conversational questions). Example: Systems or API design, pipelines, CI/CD...
+  * Interview with **DevOps Team or Sennior Devs**, Developers or FullStack (here you can expect more conversational questions). Example: Systems or API design, pipelines, CI/CD...
 
-  c. Interview with **Product Team**.
+  * Interview with **Product Team**.
   This is out of the grid. After countless interviews there´s no real pattern here since "Product" as some-kind of your second boss, they care about your behavioral and human side. However, you could expect questions related to Agile/SCRUM, Communicational topics, challenges that you had and how you faced them, errors that you committed... They will try to determine if you will be a good organic addition.
 
-  d. Interview with **Developers or FullStack** (your co-workers). Here you can expect more technical questions, have to write some code, whiteboard and... Algorithms! From a strictly human POV, you can find 4 types of groups (or particulars):
+  * Interview with **Developers or FullStack** (your co-workers). Here you can expect more technical questions, have to write some code, whiteboard and... Algorithms! From a strictly human POV, you can find 4 types of groups (or particulars):
 
-    1. **Egocentric or insecure** (self-centered people are firstly, insecure). They will try to show you how wrong you are and how well-versed they are in opposition. For this group or person, there is no Interview, if not, preserve the status-quo. The more knowledgeable you show, the more reactive they will be. If they feel threatened in their knowledge, they are going to be your first detractors.
-    2. **Unprepared**. You will see them coming with a crumpled paper, asking for your resume (yes, the one that you sent them previously 2 or 3 times) and jumping to some "JSFiddle/CodePen/JSBIN" exercise coded by other member of the Team and/or copied/pasted from some "interview coding exercises" search result.
-    3. **High bar**. Big companies with the "Culture of Selectivity", like Google, usually ends in this bucket. They are aware they are building "the Path" so, even when they are not totally sure of what are they looking, they do know they want the best. Here reigns the logic of the less, the better.
-    4. **Unifiers**. Generally, smart people holding real power inside the Company. They care about the enterprise they represent and try to hire individuals as prepared as them understanding they are betting on the future (your future). Mentors are a great example. They don´t care about mistakes if not how are you reasoning. These are the cases where candidates feel their performance was really bad, however, they receive -indistinctly- an offer.
+    - **Egocentric or insecure** (self-centered people are firstly, insecure). They will try to show you how wrong you are and how well-versed they are in opposition. For this group or person, there is no Interview, if not, preserve the status-quo. The more knowledgeable you show, the more reactive they will be. If they feel threatened in their knowledge, they are going to be your first detractors.
+    - **Unprepared**. You will see them coming with a crumpled paper, asking for your resume (yes, the one that you sent them previously 2 or 3 times) and jumping to some "JSFiddle/CodePen/JSBIN" exercise coded by other member of the Team and/or copied/pasted from some "interview coding exercises" search result.
+    - **High bar**. Big companies with the "Culture of Selectivity", like Google, usually ends in this bucket. They are aware they are building "the Path" so, even when they are not totally sure of what are they looking, they do know they want the best. Here reigns the logic of the less, the better.
+    - **Unifiers**. Generally, smart people holding real power inside the Company. They care about the enterprise they represent and try to hire individuals as prepared as them understanding they are betting on the future (your future). Mentors are a great example. They don´t care about mistakes if not how are you reasoning. These are the cases where candidates feel their performance was really bad, however, they receive -indistinctly- an offer.
 
-  e. Interview with the **Hiring Manager** (aka, your Boss). One of the greatest abilities of Officers is to delegate.
+  * Interview with the **Hiring Manager** (aka, your Boss). One of the greatest abilities of Officers is to delegate.
 ---
 
 ## Red Flags
