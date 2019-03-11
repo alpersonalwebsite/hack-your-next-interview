@@ -1,6 +1,7 @@
-# Reversing: strings or arrays
+# Reversing: strings numbers or arrays
 Examples:
 * String > Hello should return olleH
+* Number > -10 should return -1
 * Array > [1,2,3] should return [3,2,1]
 
 ## Solution 1
@@ -90,4 +91,27 @@ console.log(reverse4(str))
 Result:
 ```
 gnirts a m'I
+```
+
+## Solution 5
+For reversing a number, we can cast that number into a string and use some of the previous solutions.
+Then, convert back into number and multiply the result by its sign with `Math.sign(originalNumber)` to preserve the `-` (negative).
+
+Example:
+```javascript
+const reverse5 = (num) => {
+  let converted = num.toString();
+  let results = '';
+  for(char of converted) {
+    results = char + results;
+  }
+  return parseInt(results) * Math.sign(num);
+}
+
+console.log(reverse5(-10))
+```
+
+Result:
+```
+-1
 ```
