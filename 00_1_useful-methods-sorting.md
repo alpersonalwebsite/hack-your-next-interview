@@ -265,3 +265,10 @@ mergeAndSort [ 0, 1 ] [ 2, 5, 100 ]
 ```
 
 As you can see, I´m logging some "info" in the console to keep things clear and easy.
+The first time we invoked our function sliceArrayRec() we will have 2 arrays "as output".
+Then, we call recursively the same function until we reach the condition of 2 arrays with just one element each.
+```
+********** [ 1 ]
+********** [ 0 ]
+```
+At this point, we return the invocation of mergeAndSort() with those arrays ([ 1 ] and [ 0 ]) as arguments recursively.
