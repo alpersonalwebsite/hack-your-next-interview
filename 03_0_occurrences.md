@@ -11,6 +11,9 @@ m: 1
 9: 4
 ```
 
+We are going to use an `Object` to store each character as the key and the number of occurrences as value.
+Then, once we have our "dictionary" we will iterate through each key and compare if the value the key hold is greater than our namespace `occurrences` value which is defaulted to 0.
+
 ## Solution:
 
 ```javascript
@@ -22,15 +25,15 @@ function moreOccurrences(str) {
     else objectAsTable[char] = 1;
   }
 
-  let occurences = '';
+  let occurrences = 0;
 
-  for (let val in objectAsTable) {
-    if (objectAsTable[val] > occurences) {
-      occurences = val;
+  for (let key in objectAsTable) {
+    if (objectAsTable[key] > occurrences) {
+      occurrences = key;
     }
   }
 
-return occurences;
+return occurrences;
 
 }
 
@@ -41,4 +44,62 @@ console.log(moreOccurrences('33hhhilm9999'));
 
 ```
 9
+```
+
+Similar "challenges"...
+
+Find the duplicated character. Example '185041'
+
+If  there´s `only ONE duplicated` character and you can use `sort()`
+
+```javascript
+function isDuplicated(str) {
+  const stringToArray = str.split('').sort();
+
+  for (let i = 1; i < stringToArray.length; i++) {
+    if (stringToArray[i] === stringToArray[i - 1]) return stringToArray[i];
+  }
+  return false;
+}
+
+console.log(isDuplicated('18504'));
+```
+
+If we cannot use `sort()` we can re-utilize the previous logic: "dictionary". In this case, since we are just expecting ONE repetition, as soon as we find the duplicated character we return (we don´t want to keep iterating until the end if we found the occurrence. Remember: *performance*).
+
+```javascript
+function isDuplicated(str) {
+  const objectAsTable = {};
+
+  for (let char of str) {
+    if (objectAsTable[char]) return char;
+    else objectAsTable[char] = 1;
+  }
+
+  return false;
+}
+
+console.log(isDuplicated('18048'));
+```
+
+If we have multiple char occurrences...
+```javascript
+function isDuplicated(str) {
+  const objectAsTable = {};
+
+  for (let char of str) {
+    if (objectAsTable[char]) objectAsTable[char]++;
+    else objectAsTable[char] = 1;
+  }
+
+  const occurrences = [];
+
+  for (let key in objectAsTable) {
+    if (objectAsTable[key] > 1) occurrences.push(key);
+  }
+
+  return occurrences;
+}
+
+console.log(isDuplicated('180654321198'));
 ```
