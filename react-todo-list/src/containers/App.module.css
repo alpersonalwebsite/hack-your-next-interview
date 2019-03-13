@@ -1,6 +1,5 @@
 .flexGrid {
   display: flex;
-  background: green;
   justify-content: space-between;
 }
 

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import uuidv1 from 'uuid/v1';
-import ListOfTasks from './components/ListOfTasks'
+import ListOfTasks from '../components/ListOfTasks';
+import HeaderNav from '../components/HeaderNav';
 import styles from './App.module.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleRight, faArrowAltCircleLeft, faCoffee, faAdjust } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faCheckSquare, faCoffee)
+library.add(faArrowAltCircleRight, faArrowAltCircleLeft, faCoffee, faAdjust)
 
 class App extends Component {
   state = {
@@ -77,8 +77,6 @@ class App extends Component {
       [status]: tempArray,
       [newColumnStatus]: [...this.state[newColumnStatus], removedArray[0]]
     });
-
-    console.log(leftOrRight);
   }
 
   render() {
@@ -98,6 +96,8 @@ class App extends Component {
 
     return (
       <div className="App">
+        <h1>Board</h1>
+        <HeaderNav />
         <div onClick={this.toggleAddTaskForm}>SHOW FORM missing toogling hide name: show/hide</div>
         {tasksForm}
         <div className={styles.flexGrid}>
