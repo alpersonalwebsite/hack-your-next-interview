@@ -8,7 +8,7 @@ import styles from './Task.module.css';
 const task = (props) => {
   return (
     <div className={styles.task}>
-      <div>closeeee</div>
+      <div onClick={props.deleteTask}>closeeee</div>
       <div>Title: {props.title}</div>
       <div>Description: {props.description}</div>
       <div>

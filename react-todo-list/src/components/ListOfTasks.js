@@ -6,7 +6,10 @@ const listOfTasks = (props) => {
   return (
       <div className={styles.col}>
         <div>{props.children}</div>
-        {props.tasks.map(({title, description}) => <Task key={title} title={title} description={description} />)}
+        {props.tasks.map(({id, title, description}, index) =>
+          <Task deleteTask={() => props.deleteTask(index, props.status)} key={id} title={title} description={description} />
+          )
+        }
       </div>
   )
 }
