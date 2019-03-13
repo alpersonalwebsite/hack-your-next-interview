@@ -1,0 +1,11 @@
+.col {
+  flex: 1;
+  width: 33%;
+}
+
+@media (max-width: 640px) {
+  .col {
+    flex: 1;
+    width: 100%;
+  }
+}
