@@ -4,7 +4,9 @@ import styles from './HeaderNav.module.css';
 const headerNav = (props) => {
   return (
     <div className={styles.bar}>
-    Create Task
+      <input />
+      <div>Create Task</div>
+      <div>Filter</div>
     </div>
   );
 }

@@ -1,6 +1,8 @@
 .col {
   flex: 1;
   width: 33%;
+  background: #d5ddde;
+  padding: 0 5px;
 }
 
 .col:nth-child(even) {

@@ -5,9 +5,25 @@ import HeaderNav from '../components/HeaderNav';
 import styles from './App.module.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faArrowAltCircleRight, faArrowAltCircleLeft, faCoffee, faAdjust } from '@fortawesome/free-solid-svg-icons';
+import { faArrowAltCircleRight, 
+  faArrowAltCircleLeft, 
+  faTrashAlt,
+  faCoffee, faAdjust } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faArrowAltCircleRight, faArrowAltCircleLeft, faCoffee, faAdjust)
+library.add(faArrowAltCircleRight, 
+  faArrowAltCircleLeft, 
+  faCoffee, 
+  faAdjust, 
+  faTrashAlt)
+
+/*
+I´m using solid and free 
+https://fontawesome.com/icons?d=gallery&s=solid&m=free
+
+Example usage:
+In the module or component... import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+Then: <FontAwesomeIcon icon="trash-alt" />
+*/
 
 class App extends Component {
   state = {
@@ -26,7 +42,8 @@ class App extends Component {
     ],
     done: [
       { id: '6', title: 'Title 6...', description: 'Description 6...' }
-    ]
+    ],
+    selectedTask: ''
   }
 
 
@@ -79,6 +96,10 @@ class App extends Component {
     });
   }
 
+  selectTaskHandler = (id, status) => {
+    console.log('Selected!', id, status)
+  }
+
   render() {
 
     let tasksForm = null;
@@ -101,12 +122,32 @@ class App extends Component {
         <div onClick={this.toggleAddTaskForm}>SHOW FORM missing toogling hide name: show/hide</div>
         {tasksForm}
         <div className={styles.flexGrid}>
-          <ListOfTasks status="toDo" moveStatusTask={this.moveStatusTaskHandler}
-          statusList={this.state.listOfStatus} deleteTask={this.deleteTaskHandler} tasks={this.state.toDo}>This is what is remaining</ListOfTasks>
-          <ListOfTasks status="inProgress" moveStatusTask={this.moveStatusTaskHandler}
-          statusList={this.state.listOfStatus} deleteTask={this.deleteTaskHandler} tasks={this.state.inProgress}>This is what is in progress</ListOfTasks>
-          <ListOfTasks status="done" moveStatusTask={this.moveStatusTaskHandler}
-          statusList={this.state.listOfStatus} deleteTask={this.deleteTaskHandler} tasks={this.state.done}>This is what is done</ListOfTasks>
+          <ListOfTasks 
+            status="toDo" 
+            moveStatusTask={this.moveStatusTaskHandler}
+            statusList={this.state.listOfStatus} 
+            deleteTask={this.deleteTaskHandler} 
+            selectTask={this.selectTaskHandler}
+            tasks={this.state.toDo}>TO DO
+          </ListOfTasks>
+
+          <ListOfTasks 
+            status="inProgress" 
+            moveStatusTask={this.moveStatusTaskHandler}
+            statusList={this.state.listOfStatus} 
+            deleteTask={this.deleteTaskHandler} 
+            selectTask={this.selectTaskHandler}
+            tasks={this.state.inProgress}>IN PROGRESS
+          </ListOfTasks>
+
+          <ListOfTasks 
+            status="done" 
+            moveStatusTask={this.moveStatusTaskHandler}
+            statusList={this.state.listOfStatus} 
+            deleteTask={this.deleteTaskHandler} 
+            selectTask={this.selectTaskHandler}
+            tasks={this.state.done}>DONE
+          </ListOfTasks>
         </div>
       </div>
     );

@@ -3,5 +3,12 @@
   padding: 20px;
   border: 1px solid #eee;
   box-shadow: 0 2px 3px #ccc;
-  margin: 10px 0;
+  margin: 5px 0;
+  background: #fff;
+}
+
+/*For icons with flex grid*/
+.arrowsWidth16 {
+  max-width: 16px;
+  cursor: pointer;
 }
