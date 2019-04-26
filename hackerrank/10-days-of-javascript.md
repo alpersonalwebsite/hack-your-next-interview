@@ -21,6 +21,8 @@ High-level `Circle` intro: [What is a Circle...?](http://math2.org/math/geometry
 
 In a "real world case", probably, you will want to create a file where you define particular `functions` and import them as you need.
 
-Example: [geometry](./geometry/README.md)
+Example with flag `--experimental-modules calculations` and `*.mjs`: [geometry](./geometry/README.md)
+
+Same example using `esm` package: [geometry](./geometry1/README.md)
 
 ---
