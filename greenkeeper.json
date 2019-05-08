@@ -1,9 +1,1 @@
-{
-  "groups": {
-    "default": {
-      "packages": [
-        "react-todo-list/package.json"
-      ]
-    }
-  }
-}
+{}
