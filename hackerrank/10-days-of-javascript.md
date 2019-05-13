@@ -108,3 +108,81 @@ Most people will recommend you to use `if/else statements` instead, and avoid so
 
 ---
 
+## Day 5: Inheritance
+
+```javascript
+class Rectangle {
+    constructor(w, h) {
+        this.w = w;
+        this.h = h;
+    }
+}
+```
+
+We have a class (`Rectangle`) and we want to...
+
+1. Add a method (`area`) to the prototype of that class
+2. Create a subclass: `Square`
+3. Return the `area` of a `Square object`
+
+Code:
+```javascript
+//1
+Rectangle.prototype.area = function() {
+  return this.w * this.h
+}
+
+//2
+class Square extends Rectangle {
+  constructor(length) {
+    super(length, length)
+  }
+}
+
+//3
+const square = new Square(5);
+console.log(square.area())
+```
+
+Output: `25`
+
+Things to retain from  this exercise...
+1. Classes are "special functions" 
+2. Class declarations are NOT `hoisted`
+
+Example: `function declaration` is hoisted
+
+Output: `[object Object] { ... }`
+
+Code;
+```javascript
+const rectangle = new Rectangle()
+function Rectangle() {}
+console.log(rectangle)
+```
+
+
+Example: `class declaration` is NOT hoisted
+
+Output: `"ReferenceError: Cannot access 'Rectangle' before initialization`
+
+Code:
+```javascript
+const rectangle = new Rectangle()
+class Rectangle {}
+console.log(rectangle)
+
+```
+3. We use `super()` 
+> When used in a constructor, the super keyword appears alone and must be used before the this keyword is used. The super keyword can also be used to call functions on a parent object.
+[MDN web docs - super](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super)
+
+4. When we `instantiate` our class `Square`, creating in consequence the new `object` that we assign to the `variable square`, we are passing an `argument or parameter`, in this case, 5. With `super()` we are overwriting the properties defined in the `parent class` respecting the "order" in which we are passing those parameters.
+
+*Note*: Our parent class has 2 properties defined in th constructor.
+
+a. If we instantiate our class passing one argument `const square = new Square(5);` and `super()` "passes" it twice `super(length, length)`, both properties will hold that value. In our example, both `w` and `h` will have the value `5`.
+
+b. If `super()` just passes it once, `super(length)`, `w` will hold the value `5` and `h` will be `undefined`.
+
+---
