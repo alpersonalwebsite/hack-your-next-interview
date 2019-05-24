@@ -1,6 +1,6 @@
 # FullStack and FrontEnd job interview quick notes
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/alpersonalwebsite/challenges.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/alpersonalwebsite/hack-your-next-interview.svg)](https://greenkeeper.io/)
 
 A few days ago, I quit my job; after a weekend of pseudo-leisure, I started -actively- to apply to different vacancies through LinkedIn. I don´t use other services even when I could radically increase my chances. Just "IN" and some nice third-party recruiters. Why am I avoiding popular utilities like *Hired*...?
 
@@ -33,11 +33,6 @@ When you start a new job, probably (and hopefully) the persons who have been wor
 In a regular interview process, they will try to expose you to some bitter moments just to see how you handle both: positive and negative human feelings, for example, frustration.
 But, when are you going to have the opportunity to test them equally..? Know how would they react when things are not going as expected and discomfort manifests in all its fullness.  
 Once you have been hired...? Once you are sunk in other bitterness typing a quickly 2-weeks-notice...? That´s too late! Fail is part of our human condition, but, you must take certain precautions if you want to find a nice human group and avoid toxic environments.
-
-
-
-
-
 
 ---
 
@@ -72,6 +67,7 @@ Expected time: *most of the companies will have you around 5 hours, however, the
     - **Unifiers**. Generally, smart people holding real power inside the Company. They care about the enterprise they represent and try to hire individuals as prepared as them understanding they are betting on the future (your future). Mentors are a great example. They don´t care about mistakes if not how are you reasoning. These are the cases where candidates feel their performance was really bad, however, they receive -indistinctly- an offer.
 
   * Interview with the **Hiring Manager** (aka, your Boss). One of the greatest abilities of Officers is to delegate.
+
 ---
 
 ## Red Flags
@@ -94,8 +90,8 @@ For me, behaviors that go against my principles, manners or that could affect th
 ## Index
 
 1. [Useful methods](./00_0_useful-methods.md)
-    1. [Reversing without reverse() method](./00_1_useful-methods-reversing.md)
-    2. [Sorting without sort() method](00_1_useful-methods-sorting.md)
-2. [Basic ES2015 or ES6](./00_0_basic-es2015.md)
-3. Algorithms
-    1. [Queue and Stack](data-structures/05_0_queue-and-stack.md)
+  a. [Reversing without reverse() method](./00_1_useful-methods-reversing.md)
+  b. [Sorting without sort() method](00_1_useful-methods-sorting.md)
+1. [Basic ES2015 or ES6](./00_0_basic-es2015.md)
+2. Algorithms
+  a. [Queue and Stack](../blob/master/data-structures/05_0_queue-and-stack.md)
