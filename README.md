@@ -90,8 +90,11 @@ For me, behaviors that go against my principles, manners or that could affect th
 ## Index
 
 1. [Useful methods](./00_0_useful-methods.md)
-  a. [Reversing without reverse() method](./00_1_useful-methods-reversing.md)
-  b. [Sorting without sort() method](00_1_useful-methods-sorting.md)
-1. [Basic ES2015 or ES6](./00_0_basic-es2015.md)
-2. Algorithms
-  a. [Queue and Stack](../blob/master/data-structures/05_0_queue-and-stack.md)
+    
+    a. [Reversing without reverse() method](./00_1_useful-methods-reversing.md)
+    
+    b. [Sorting without sort() method](00_1_useful-methods-sorting.md)
+2. [Basic ES2015 or ES6](./00_0_basic-es2015.md)
+3. Algorithms
+  
+    a. [Queue and Stack](../../data-structures/blob/master/05_0_queue-and-stack.md)
