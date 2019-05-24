@@ -1,1 +1,11 @@
-{}
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "hackerrank/geometry/package.json",
+        "hackerrank/geometry1/package.json",
+        "package.json"
+      ]
+    }
+  }
+}
