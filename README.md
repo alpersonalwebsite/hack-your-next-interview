@@ -97,4 +97,4 @@ For me, behaviors that go against my principles, manners or that could affect th
 2. [Basic ES2015 or ES6](./00_0_basic-es2015.md)
 3. Algorithms
   
-    a. [Queue and Stack](/data-structures/blob/master/05_0_queue-and-stack.md)
+    a. [Queue and Stack](../05_0_queue-and-stack.md)
