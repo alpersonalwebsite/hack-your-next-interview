@@ -95,6 +95,11 @@ For me, behaviors that go against my principles, manners or that could affect th
     
     b. [Sorting without sort() method](00_1_useful-methods-sorting.md)
 2. [Basic ES2015 or ES6](./00_0_basic-es2015.md)
-3. Algorithms
+3. Data Structures
   
-    a. [Queue and Stack](../../../data-structures/blob/master/05_0_queue-and-stack.md)
+    a. [Queue and Stack](../../../data-structures-and-algorithms/blob/master/05_0_queue-and-stack.md)
+    
+    b. [Linked List](../../../data-structures-and-algorithms/blob/master/04_0_linked-list.md)
+
+    c. [Hash Table](../../../data-structures-and-algorithms/blob/master/03_0_hash-table.md)
+4. Algorithms
