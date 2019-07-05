@@ -1,6 +1,7 @@
 # FullStack and FrontEnd job interview quick notes
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/alpersonalwebsite/hack-your-next-interview.svg)](https://greenkeeper.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 A few days ago, I quit my job; after a weekend of pseudo-leisure, I started -actively- to apply to different vacancies through LinkedIn. I don´t use other services even when I could radically increase my chances. Just "IN" and some nice third-party recruiters. Why am I avoiding popular utilities like *Hired*...?
 
