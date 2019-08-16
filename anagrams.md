@@ -7,7 +7,7 @@ We need to determine if `2 strings` are `anagrams`, ensuring that...
 * We work with lowercase chars
 * We return boolean: `true` or `false`
 
-## Solution 1:
+## Solution 1: Compare strings (string to array to string)
 
 ```javascript
 const str1 = 'Hel1@ olA';
@@ -31,7 +31,7 @@ console.log(isAnagram(str1, str2))
 Result:
 `false`
 
-## Solution 2:
+## Solution 2: Compare strings (object to string)
 
 ```javascript
 const str1 = 'Hel1@ ol';
@@ -82,5 +82,61 @@ Result:
 ```
 {"h":1,"e":1,"l":2,"o":1}
 {"h":1,"e":1,"l":2,"o":1}
+true
+```
+
+## Solution 3: Check object property (Loop: if present subtract 1, if not return false)
+
+```javascript
+const str1 = 'Hel1@ ol';
+const str2 = ' H e ll0o';
+
+function parseStringToAZ(str) {
+  return str.replace(/[^a-z]/gi,'').toLowerCase();
+}
+
+function mapToObject(str) {
+  str = parseStringToAZ(str)
+  
+  const objectAsTable = {};
+  
+  for (let char of str) {
+    (objectAsTable[char]) ? objectAsTable[char]++ : objectAsTable[char] = 1
+  }
+  
+  return objectAsTable
+}
+
+function isAnagram(strA, strB) {
+
+  strA = parseStringToAZ(strA)
+  strB = parseStringToAZ(strB)
+
+  // Should have same length
+  if (strA.length !== strB.length) return false
+
+  let obj1 = mapToObject(strA)
+ 
+  for (let char of strB) {
+    // if we dont have that character in our previous object
+    // it is not an anagram
+    if (!obj1[char]) {
+      return false
+    } else {
+      obj1[char]--
+    }
+  } 
+  console.log(obj1)
+  return true
+
+}
+
+
+console.log(isAnagram(str1, str2))
+```
+
+Result:
+```
+{h: 0, e: 0, l: 0, o: 0}
 true
 ```
