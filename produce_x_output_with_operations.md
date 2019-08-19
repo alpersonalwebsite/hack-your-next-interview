@@ -93,3 +93,75 @@ Result
 [1, 3, 4, 6]
 ```
 
+*Quick note about .sort()*
+When you are sorting numbers greater than 9... You need to pass the "compare function" to the `sort method`. 
+> As [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) consigns: **compareFunction** Specifies a function that defines the sort order. If omitted, the array elements are converted to strings, then sorted according to each character's Unicode code point value.
+
+Example:
+```javascript
+const arr1 = [4,1,3,6,7,9,9,8,8,10,12];
+
+const orderWithSort = [...arr1].sort()
+
+const orderComparing = [...arr1].sort(function(a, b){return a-b})
+
+console.log(`
+orderWithSort: ${orderWithSort}
+
+orderComparing: ${orderComparing}
+`)
+```
+
+Output:
+```
+orderWithSort: 1,10,12,3,4,6,7,8,8,9,9
+
+orderComparing: 1,3,4,6,7,8,8,9,9,10,12
+```
+
+---
+
+Solution:
+
+```javascript
+const arr1 = [4,1,3,6,7,9,9,8,8,10,12];
+
+const orderedArr1 = [...arr1].sort(function(a, b){return a-b})
+
+function addTo12(arr) {
+  let left = 0;
+  let right = arr.length - 1;
+  
+  while (left < right) {
+  
+    console.log(`Processing ${arr[left]} - ${arr[right]}`)
+  
+    if (arr[left] + arr[right] === 12) {
+      return [arr[left], arr[right]]
+    } else if (arr[left] + arr[right] > 12) {
+      right--;
+    } else {
+      left++;
+    }
+  }
+  
+  return false
+
+}
+
+console.log(addTo12(orderedArr1))
+
+console.log(orderedArr1)
+```
+
+Result:
+```
+Processing 1 - 12
+Processing 1 - 10
+Processing 3 - 10
+Processing 3 - 9
+
+[3, 9]
+
+[1, 3, 4, 6, 7, 8, 8, 9, 10, 12]
+```
