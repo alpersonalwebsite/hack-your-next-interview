@@ -1,7 +1,8 @@
 # Occurrences
-Find the character that appears more times in a given string (aka, maximum occurring character).
+Find the `character` that appears more times in a given `string`.
+
 Example:
-For... '33hhhilm9999' the output should be 9 since...
+For... `'33hhhilm9999'` the output should be `9` since...
 ```
 3: 2
 h: 3
@@ -14,7 +15,7 @@ m: 1
 We are going to use an `Object` to store each character as the key and the number of occurrences as value.
 Then, once we have our "dictionary" we will iterate through each key and compare if the value the key hold is greater than our namespace `occurrences` value which is defaulted to 0.
 
-## Solution:
+## Solution: most recurrent number
 
 ```javascript
 function moreOccurrences(str) {
@@ -214,4 +215,86 @@ function isDuplicate(str) {
 }
 
 console.log(isDuplicate('180654321198'));
+```
+
+---
+
+We can slightly change the "challenge" to return...
+1. All characters without duplicates. For the string `'aabbbcdd'` we should return `'abcd'`
+2. Just unique characters. For the string `'aabbbcdd'` we should return `'c'`
+
+## Solution: all characters without duplicates with Set
+
+> The Set object lets you store **unique** values of any type, whether primitive values or object references. [Set - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
+
+
+```javascript
+function removeDuplicates(str) {
+  const set = new Set(str)
+  return [...set].join('')
+}
+
+console.log(removeDuplicates('aaabbbbbbcd1112666'))
+```
+
+## Result:
+
+```
+abcd126
+```
+
+However, probably your interviewer will ask you for a solution using a "hash table" and a "loop".
+
+You can re-utilize previous logic.
+
+```javascript
+function removeDuplicates(str) {
+  const objectAsTable = {};
+  
+  for (let char of str) {
+    if (objectAsTable[char]) objectAsTable[char]++
+    else objectAsTable[char] = 1
+  }
+  
+  return Object.keys(objectAsTable).join('')
+}
+
+console.log(removeDuplicates('aaabbbbbbcd1112666'))
+```
+
+Result:
+```
+126abcd
+```
+
+And yes... This approach **does not preserve order** since we are working with an `object`.
+
+## Solution: return unique chars
+
+```javascript
+function returnUnqiueChars(str) {
+  const objectAsTable = {};
+  
+  for (let char of str) {
+    if (objectAsTable[char]) objectAsTable[char]++
+    else objectAsTable[char] = 1
+  }
+  
+  let uniqueChars = '';
+  
+  for (let key in objectAsTable) {
+    if (objectAsTable[key] < 2) uniqueChars += key;
+  }
+
+  return uniqueChars;
+  
+}
+
+console.log(returnUnqiueChars('abbaabbbcd16126661'))
+```
+
+## Result:
+
+```
+2cd
 ```
