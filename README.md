@@ -3,6 +3,37 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/alpersonalwebsite/hack-your-next-interview.svg)](https://greenkeeper.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
+## Table of Contents
+
+- [Intro](#intro)
+- [Brief personal advice](#brief-personal-advice)
+- [The Interview Process](#the-interview-process)
+- [Red Flags](#red-flags)
+
+- Technical resources
+  * [Useful methods](./00_0_useful-methods.md)
+  * [Reversing without reverse() method](./00_1_useful-methods-reversing.md)
+  * [Sorting without sort() method](00_1_useful-methods-sorting.md)
+  * [Basic ES2015 or ES6](./00_0_basic-es2015.md)
+  * [Callbacks, Promises and Async/Await](./00_0_callbacks-promises-async_await.md)
+
+  * Data Structures
+    + [Queue and Stack](../../../data-structures-and-algorithms/blob/master/05_0_queue-and-stack.md)
+    + [Linked List](../../../data-structures-and-algorithms/blob/master/04_0_linked-list.md)
+    + [Hash Table](../../../data-structures-and-algorithms/blob/master/03_0_hash-table.md)
+
+  * Code Challenges
+    + [Fibonacci](./01_0_fibonacci.md)
+    + [FizzBuzz](./02_0_fizzbuzz.md)
+    + [Palindromes](./02_0_palindromes.md)
+    + [Occurrences](./03_0_occurrences.md)
+    + [Anagrams](./04_0_anagrams.md)
+    + [Produce X output](./05_0_produce_x_output_with_operations.md)
+    + [Recursion](./06_0_recursion.md)
+    + [Flattening MD arrays](./07_0_flattening-multidimensional-arrays.md)
+
+## Intro
+
 A few days ago, I quit my job; after a weekend of pseudo-leisure, I started -actively- to apply to different vacancies through LinkedIn. I don´t use other services even when I could radically increase my chances. Just "IN" and some nice third-party recruiters. Why am I avoiding popular utilities like *Hired*...?
 
 First, because I do believe that one should create his/her own career (no one better than one knows what one needs): you have to think it, you have to convert those desires of "musts/shoulds" into bullets points and be aware of your requirements (in my case, a "positive Culture"). Essentially and in first place, be the "Initiator".
@@ -84,23 +115,4 @@ For me, behaviors that go against my principles, manners or that could affect th
 4. When they try to show you how good they are or set some kind of "minimum bar"
 5. When the technical people commit technical mistakes
 6. When they don´t have a clear schedule pre-shared letting you know who are going to interview them, what positions they hold and the proper timeline for each interview
-7. When you asked about the Company and all the emphasis is on the technological flank, witho}ut meaningful mentions to the **Company Culture and Values**
-
----
-
-## Index
-
-1. [Useful methods](./00_0_useful-methods.md)
-    
-    a. [Reversing without reverse() method](./00_1_useful-methods-reversing.md)
-    
-    b. [Sorting without sort() method](00_1_useful-methods-sorting.md)
-2. [Basic ES2015 or ES6](./00_0_basic-es2015.md)
-3. Data Structures
-  
-    a. [Queue and Stack](../../../data-structures-and-algorithms/blob/master/05_0_queue-and-stack.md)
-    
-    b. [Linked List](../../../data-structures-and-algorithms/blob/master/04_0_linked-list.md)
-
-    c. [Hash Table](../../../data-structures-and-algorithms/blob/master/03_0_hash-table.md)
-4. Algorithms
+7. When you asked about the Company and all the emphasis is on the technological flank, without meaningful mentions to the **Company Culture and Values**

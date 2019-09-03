@@ -1,2 +1,0 @@
-# Flattening multidimensional Arrays
-
