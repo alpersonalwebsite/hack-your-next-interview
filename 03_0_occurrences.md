@@ -217,6 +217,75 @@ function isDuplicate(str) {
 console.log(isDuplicate('180654321198'));
 ```
 
+If we want to return the `character` or `string` (we can loop and array instead of a string) with more occurrences OR, in case of multiple with same frequency the first one, we can do the following...
+
+```javascript
+function isDuplicate(str) {
+  const objectAsTable = {};
+  let highestFreq = 0;
+  let highestFreqElement = ''
+
+  for (let char of str) {
+    
+    let tempVal = objectAsTable[char]
+  
+    if (tempVal) objectAsTable[char]++;
+    else objectAsTable[char] = 1;
+    
+    if (tempVal > highestFreq) {
+      highestFreq = tempVal
+      highestFreqElement = char
+    }
+  }
+
+  return highestFreqElement;
+}
+
+console.log(isDuplicate('18181890')); // Expected 1
+console.log(isDuplicate('1818890')); // Expected 8
+```
+
+Result:
+```
+1
+8
+```
+
+The general logic is similar to what we have been doing...
+We loop our string, check if we have that character as key of the temporal object (objectAsTable), if we have it we increase its value, if not, we add it to the object.
+Yet, we are introducing 2 new variables and a conditional.
+
+Let's try to make it graphic. Imagine we have the following object:
+```
+a: 3
+b: 1
+c: 2
+```
+
+The next character we have to check in our object is `d`. We don't have `d`; so we add it and set its value to `1`.
+
+```
+a: 3
+b: 1
+c: 2
+d: 1
+```
+
+Next character: `a`. We do have `a` in our object. So we increase its value by 1.
+
+```
+a: 4
+b: 1
+c: 2
+d: 1
+```
+
+But, we also check if the value of `a` is greater than the value of `highestFreq = 0`.
+In this case, it is. So we set the value of `highestFreq` to `4` which is the value of `a`.
+We also replace the string or character we are holding in the variable `highestFreqElement` which the one it has the greater value. In this case, `highestFreqElement` is going to hold the value `a`
+
+Next character is `b`. We have it so be increase its value by `1`. But, the value of `b` is not greater than the previous "highest frequency character" (in our case, `a`). Nothing else to do here! Just move to the next `character` in the `loop`. 
+
 ---
 
 We can slightly change the "challenge" to return...
@@ -227,6 +296,7 @@ We can slightly change the "challenge" to return...
 
 > The Set object lets you store **unique** values of any type, whether primitive values or object references. [Set - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
 
+Feel free to replace `[...set]` with `Array.from(set)`
 
 ```javascript
 function removeDuplicates(str) {
@@ -239,6 +309,30 @@ console.log(removeDuplicates('aaabbbbbbcd1112666'))
 
 ## Result:
 
+```
+abcd126
+```
+
+We can create an empty array, check if we have that element in the array, and, if we don't have it, simply add it.
+
+Feel free to replace `(tempArr.indexOf(char) === -1)` with `(!tempArr.includes(char))`.
+
+```javascript
+function removeDuplicates(str) {
+  const tempArr = [];
+  
+  for (let char of str) {
+    if (tempArr.indexOf(char) === -1) tempArr.push(char)
+  }
+  
+  return tempArr.join('')
+
+}
+
+console.log(removeDuplicates('aaabbbbbbcd1112666'))
+```
+
+Result:
 ```
 abcd126
 ```
@@ -267,7 +361,7 @@ Result:
 126abcd
 ```
 
-And yes... This approach **does not preserve order** since we are working with an `object`.
+And yes...! This approach **does not preserve order** since we are working with an `object`.
 
 ## Solution: return unique chars
 
