@@ -36,7 +36,7 @@
 
 A few days ago, I quit my job; after a weekend of pseudo-leisure, I started applying to different vacancies through LinkedIn.
 
-In this repo, I will be sharing some recurrent topics, "code exercises/challenges" and experiences (including a few crazy ones as colorful anecdotes) to contribute to your Interview´s process and Job Hunt.
+Given that several friends and colleagues asked me about my experiences during this process and in view of frequently requests related to `How to Hack Interviews`, I decided to setup this repo with the aim of sharing some recurrent topics, "code exercises/challenges" and experiences (including a few crazy ones as colorful anecdotes) to make easier theirs (and yours) `Job Hunt` and `Interview Process`.
 
 **Important note:** This is an ongoing work among several others... So... There´s no periodicity commitment.
 
