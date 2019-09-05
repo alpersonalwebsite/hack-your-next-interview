@@ -44,7 +44,7 @@ Given that several friends and colleagues asked me about my experiences during t
 
 ## Brief personal advice
 
-No matter HOW much you like the vacancy and your interviewers, and probably against the "wise general guidance", I strongly recommend you to generate some kind of "friction" or "conflict" with whom would be your co-workers during the `on-site meeting`. Please, `nothing too big` (if you want to obtain the job) nor persistent. You can over-speak once and check her reaction. Put particular attention to facial expressions and shoulder movement. 
+No matter HOW much you like the vacancy and your interviewers, and probably against the "wise general guidance", I strongly recommend you to generate some "friction" or "conflict" with whom would be your co-workers during the `on-site meeting`. Please, `nothing too big` (if you want to obtain the job) nor persistent. You can over-speak **once** and check their reaction. Put particular heed to facial expressions and shoulder movements. *And keep in mind the following:* do it in the middle of the conversation, having enough time to go back to a peaceful and sympathetic state.
 
 Yes, yes... I´m pretty sure you are convinced that I finally went crazy, nonetheless, let me first explain the `why` before you pronounce sentence. 
 
@@ -53,17 +53,19 @@ We, `humans`, are complex and fluctuating beings. Accept it or perish!
 That swing (when it's properly well-balanced) constitutes one of the central axes of Evolution: "change".
 
 Sometimes we are happy, other sad...
-Sometimes cheerful, sometimes grumpy... And, even when this concerns us all equally, from your side, you should carefully reflect: "I will spend at least 8 hours per day with these people. What will be their behavior(s) in adverse situations or just personal "bad days"...?"
+Sometimes cheerful, sometimes irritable... And, even when this concerns us all equally, from your side, you should carefully reflect: "I will spend at least 8 hours per day with these People. What will be their behavior(s) in adverse situations or just personal "bad days"...?"
 
 Does this start to make sense...?
 
 *Remember:* adversities always come; you cannot prevent them, yet, you can pre-set their scope or be prepared to react properly. 
 
-When you start a new job, probably (and hopefully) the People who have been working there, are going to be "more proficient than you" in several aspects/tasks/situations. This is not strange: they scoped and built the applications, set the stack (workflows and pipelines), know the tricky parts of their environments and tools, even those that have a halo of mystery around them (aka, "we know it works, but we are not sure why"). Regardless how qualified you are, the TEAM is always going to have well-owned advantage (we should all be glad of this conjuncture inasmuch as it protects the whole from "mad managers" casting the legacy remark in sustainability).
+When you start a new job, probably (and hopefully) the People who have been working there, are going to be "more proficient than you" in several aspects/tasks/situations. This is not strange: they scoped and built the applications, set the stack (workflows and pipelines), know the tricky parts of their environments and tools, even those that have a halo of mystery around them (aka, "we know it works, but we are not sure why").
 
-In a regular interview process, good screeners will try to expose you to some bitter moments just to see how you handle both, positive and negative human feelings (for example, `frustration`). In fact, several challenges and "blackboard exercises" are not meant to be solved without assistance: they require you to ask questions and interact with your interviewer to find the proper solution.
+Regardless how qualified you are, the TEAM is always going to have well-owned advantage (we should all be glad of this conjuncture inasmuch as it protects the whole from "mad managers" casting the legacy remark in sustainability).
 
-But... When are you going to have the opportunity to test them equally..? 
+In a regular interview process, good screeners will try to expose you to some bitter moments just to see how you handle both, positive and negative human feelings (for example, `frustration`). In fact, several challenges and "blackboard exercises" are not meant to be solved without assistance: *they require you to ask questions and interact with your interviewer to find the proper solution*.
+
+But... When are you going to have the opportunity to test them equally...? 
 Know how would they react when things are not going as expected and discomfort manifests in all its fullness.  
 
 Once you have been hired...? 
@@ -77,16 +79,19 @@ Fail is part of our human condition, although you must take certain precautions 
 
 ## The Interview Process
 
-I should start stating the obvious: each Company is a unique world, and in consequence, every process is different. However, usually you have 4 common steps:
+I should start stating the obvious: each Company is a unique world, and in consequence, every process is different. Yet, usually you have 4 common steps:
 
-1. **First approach**: vacancy presentation, highlight of "Core Values or Principles" (from both sides), curricular recapitulation (your work experience) and advice. This step is mainly humanistic and presentational. There are no right/wrong answers.
+1. **First approach**: you will be talking with an in-house recruiter or People and Culture (ex HR) representative. In small ventures, it could also be the CTO or VP of Engineering. Usually, you are going to be introduced first to the Company (Mission, Core Values and Principles...) and then, to the particular role. After this, you should present yourself, highlight the most transcendental aspects of your last 2 jobs (or positions) and answer behavioral questions. At the end, you should have at least 5 minutes to inquire and dispel any doubt related to the Business. This step is mainly humanistic and presentational.
 Expected time: *less than 30 minutes*.
 
-2. **First technical screening**: generally, you will be asked to answer questions related to your experience and knowledge of particular technologies (languages, platforms, services, libraries, tools...) tied to the "job requirements". This is the real first filter and it will show (or evidence) if you really know what you think you know and if you do it in the right way (good practices and patterns).
+2. **First technical screening**: generally, you will be asked to respond to questions linked to your experience and knowledge of particular technologies (programming languages, platforms, services, libraries, tools...) tied to the "job requirements". This is the real "first technical filter" and it will show (or evidence) if you truly know what you think you know, and if you do it in the right way (good practices and patterns). You will talk (this is a "Phone Screen") with one of the Sr. Software Engineers of your (future?) Team. 
 Expected time: *no more than 1 hour, commonly 30 minutes*.
 
-3. **Second technical screening**: this is a little more "intense" than the previous one. You should expect "code exercises" (like Fibonacci, reversing strings, palindromes...), "define which would be the output of..." (like `console.log()` and `setTimeout()`), `MVC` such as building a small `SPA` with one of JS framework (like a TO-DO list with React), "pair programming". From all the interviews steps, normally this is the definitive but not the last one.
+3. **Second technical screening**: this is -certainly- a little more "intense" than the previous ones. You should expect "coding challenges" (like Fibonacci, reversing strings, palindromes...), "define which would be the output of...", exercises such as building a small `SPA` with one of the JS framework or libraries (like a TO-DO list with React), among others. You will be interacting with a Principal Engineer or Software Manager. You could share just your screen (working locally or through some "interviewing platform") or... The screen plus your camera. 
+From all the interviews steps, normally this is the definitive but not the last one.
 Expected time: *around 1 hour*.
+
+    *Note about challenges with video:* Every time I was part of the "Recruitment Pipeline" (either as  IC or Manager) I deliberately banned this. I prefer "take home" activities, and, as last resource, screen-sharing. Never camera! If you are a Manager or Interviewer and you are reading this, remember... Be empathetic! That Person has a lot on his/her shoulders! Certainly, you don't need to make her/him more vulnerable to prove knowledge nor tenacity.
 
 4. **On-site interview**: Great news! If you got to this point, probably you will receive an offer.
 Expected time: *most of the companies will have you around 5 hours, however, there is a growing number of enterprises that have adopted the 2.30 hs model*. We do appreciate these last!
