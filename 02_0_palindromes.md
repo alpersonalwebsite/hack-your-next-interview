@@ -1,4 +1,5 @@
 # Palindromes
+
 Palindrome: a word, phrase, number, or other sequence of symbols or elements, whose meaning may be interpreted the same way in either forward or reverse direction.
 For more information: [Palindrome List](http://www.palindromelist.net/)
 
@@ -32,4 +33,54 @@ console.log(palinDrome('Amore, Roma.'));
 
 ```
 true
+```
+
+---
+
+# Rotation
+
+This is not a common Interview question, however, it's a regular challenge in platforms like `hackerrank`
+
+We have 2 `strings` and we have to check if one is the rotation of the other.
+
+Examples:
+`abcd` and `cdab` should return `true`
+`abcd` and `dcab` should return `false`
+
+First, both strings must have the same length. If not, we should immediately return `false`.
+
+The solution is much simpler than you might be thinking. Just duplicate the string and search for that substring.
+
+`abcdabcd` has the substring `cdab`...? Yes...
+`abcdabcd` has the substring `dcab`...? No...
+
+## Solution:
+
+```javascript
+const str1 = 'abcd';
+
+const str2 = 'cdab';
+
+const str3 = 'dcab';
+
+const str4 = 'dca';
+
+function isRotation(firstStr, secondStr) {
+  if (firstStr.length !== secondStr.length) return false;
+  
+  if (firstStr.repeat(2).includes(secondStr)) return true
+  
+  return false
+}
+
+console.log(isRotation(str1, str2))
+console.log(isRotation(str1, str3))
+console.log(isRotation(str1, str4))
+```
+
+## Result:
+```
+true
+false
+false
 ```
