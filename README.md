@@ -34,37 +34,44 @@
 
 ## Intro
 
-A few days ago, I quit my job; after a weekend of pseudo-leisure, I started -actively- to apply to different vacancies through LinkedIn. I don´t use other services even when I could radically increase my chances. Just "IN" and some nice third-party recruiters. Why am I avoiding popular utilities like *Hired*...?
+A few days ago, I quit my job; after a weekend of pseudo-leisure, I started applying to different vacancies through LinkedIn.
 
-First, because I do believe that one should create his/her own career (no one better than one knows what one needs): you have to think it, you have to convert those desires of "musts/shoulds" into bullets points and be aware of your requirements (in my case, a "positive Culture"). Essentially and in first place, be the "Initiator".
+In this repo, I will be sharing some recurrent topics, "code exercises/challenges" and experiences (including a few crazy ones as colorful anecdotes) to contribute to your Interview´s process and Job Hunt.
 
-Second, because I don´t want to be like a sham ornament on display waiting for a good soul to take me "home".
-There are different stages in life. Now, after working for a prudential time, I can be a little picky and pull apart as much time as I need/desire to make the proper research of each company.
-If you don´t have greater pressures, I strongly recommend you to do this. Maybe, it is not going to pay-you-back at short term, nevertheless, it will do it in an incremental way at medium/long "time-distance".
-
-In this repo, I will be sharing some recurrent topics, "code exercises" and experiences (a few crazy ones -also- as colorful notes) to contribute to your Interview´s process.
-
-**Important note:** This is an ongoing work among several others... So there´s no periodicity commitment.
+**Important note:** This is an ongoing work among several others... So... There´s no periodicity commitment.
 
 ---
 
 ## Brief personal advice
 
-No matter HOW much you like the vacancy and your interviewers, and probably against the "wise general guidance", I strongly recommend you to generate some kind of "friction" or "conflict" with whom would be your co-workers during the on-site meeting.
-Yes, yes... I´m pretty sure you are convinced that I finally went crazy, nonetheless, gift me a couple more lines to explain "my point".
+No matter HOW much you like the vacancy and your interviewers, and probably against the "wise general guidance", I strongly recommend you to generate some kind of "friction" or "conflict" with whom would be your co-workers during the `on-site meeting`. Please, `nothing too big` (if you want to obtain the job) nor persistent. You can over-speak once and check her reaction. Put particular attention to facial expressions and shoulder movement. 
 
-We, humans, are complex and fluctuating beings. Accept it or perish!
-That swing, when it is properly well-balanced constitutes one of the central axes of Evolution: "change".
-Sometimes we are happy, others sad...
-Sometimes cheerful, sometimes grumpy... And, even when this concerns us all equally, from your side you should think: "I will spend at least 8hs. per day with these people. What will be their behavior(s) in adverse situations or just personal "bad days"...?"
+Yes, yes... I´m pretty sure you are convinced that I finally went crazy, nonetheless, let me first explain the `why` before you pronounce sentence. 
+
+We, `humans`, are complex and fluctuating beings. Accept it or perish!
+
+That swing (when it's properly well-balanced) constitutes one of the central axes of Evolution: "change".
+
+Sometimes we are happy, other sad...
+Sometimes cheerful, sometimes grumpy... And, even when this concerns us all equally, from your side, you should carefully reflect: "I will spend at least 8 hours per day with these people. What will be their behavior(s) in adverse situations or just personal "bad days"...?"
+
 Does this start to make sense...?
-Because adversities always come, and your case, will not be the exception.
 
-When you start a new job, probably (and hopefully) the persons who have been working for x-time there, are going to be "more proficient than you" in several aspects/tasks/situations. This is not strange: they created the programs, set the stack, know the tricky parts of their environments and tools, even  those that have a halo of mystery around them. Regardless how qualified you are, the TEAM is always going to have well-deserved advantage (we should all be glad about this conjuncture inasmuch as it protects the whole from "mad managers" casting the legacy remark in sustainability).
+*Remember:* adversities always come; you cannot prevent them, yet, you can pre-set their scope or be prepared to react properly. 
 
-In a regular interview process, they will try to expose you to some bitter moments just to see how you handle both: positive and negative human feelings, for example, frustration.
-But, when are you going to have the opportunity to test them equally..? Know how would they react when things are not going as expected and discomfort manifests in all its fullness.  
-Once you have been hired...? Once you are sunk in other bitterness typing a quickly 2-weeks-notice...? That´s too late! Fail is part of our human condition, but, you must take certain precautions if you want to find a nice human group and avoid toxic environments.
+When you start a new job, probably (and hopefully) the People who have been working there, are going to be "more proficient than you" in several aspects/tasks/situations. This is not strange: they scoped and built the applications, set the stack (workflows and pipelines), know the tricky parts of their environments and tools, even those that have a halo of mystery around them (aka, "we know it works, but we are not sure why"). Regardless how qualified you are, the TEAM is always going to have well-owned advantage (we should all be glad of this conjuncture inasmuch as it protects the whole from "mad managers" casting the legacy remark in sustainability).
+
+In a regular interview process, good screeners will try to expose you to some bitter moments just to see how you handle both, positive and negative human feelings (for example, `frustration`). In fact, several challenges and "blackboard exercises" are not meant to be solved without assistance: they require you to ask questions and interact with your interviewer to find the proper solution.
+
+But... When are you going to have the opportunity to test them equally..? 
+Know how would they react when things are not going as expected and discomfort manifests in all its fullness.  
+
+Once you have been hired...? 
+Once you are sunk in bitterness typing a quickly 2-weeks-notice...? 
+
+That´s too late! 
+
+Fail is part of our human condition, although you must take certain precautions if you want to find a nice Human group, avoid toxic environments and develop a career.
 
 ---
 
