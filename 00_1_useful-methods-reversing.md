@@ -5,17 +5,14 @@ Examples:
 * Number > `-10` should return `-1`
 * Array > `[1,2,3]` should return `[3,2,1]`
 
----
-
 ## Solutions summary
+
 1. Reverse string using reverse()
 2. Reverse string with .map() and .unshift()
 3. Reverse string with for loop prepending each element to a new string
 4. Reverse string with for...of prepending each element to a new string
 5. Reverse number and preserve the sign (if negative)
 6. Reverse array with for...of and spread operator
-
----
 
 ## Solution 1
 
