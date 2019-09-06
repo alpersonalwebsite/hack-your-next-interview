@@ -144,7 +144,7 @@ Result:
 13
 ```
 
-# Solution 6
+## Solution 6
 
 As before, we loop the array. The only difference is we are using the "spread operator" creating a new array where first we add the element, and then spread the value of `tempArr`.
 
