@@ -32,6 +32,9 @@
     + [Recursion](./06_0_recursion.md)
     + [Flattening MD arrays](./07_0_flattening-multidimensional-arrays.md)
 
+---
+
+
 ## Intro
 
 A few days ago, I quit my job; after a weekend of pseudo-leisure, I started applying to different vacancies through LinkedIn.
@@ -40,7 +43,6 @@ Given that several friends and colleagues asked me about my experiences during t
 
 **Important note:** This is an ongoing work among several others... So... There´s no periodicity commitment.
 
----
 
 ## Brief personal advice
 
@@ -75,7 +77,6 @@ That´s too late!
 
 Fail is part of our human condition, although you must take certain precautions if you want to find a nice Human group, avoid toxic environments and develop a career.
 
----
 
 ## The Interview Process
 
@@ -87,30 +88,34 @@ Expected time: *less than 30 minutes*.
 2. **First technical screening**: generally, you will be asked to respond to questions linked to your experience and knowledge of particular technologies (programming languages, platforms, services, libraries, tools...) tied to the "job requirements". This is the real "first technical filter" and it will show (or evidence) if you truly know what you think you know, and if you do it in the right way (good practices and patterns). You will talk (this is a "Phone Screen") with one of the Sr. Software Engineers of your (future?) Team. 
 Expected time: *no more than 1 hour, commonly 30 minutes*.
 
-3. **Second technical screening**: this is -certainly- a little more "intense" than the previous ones. You should expect "coding challenges" (like Fibonacci, reversing strings, palindromes...), "define which would be the output of...", exercises such as building a small `SPA` with one of the JS framework or libraries (like a TO-DO list with React), among others. You will be interacting with a Principal Engineer or Software Manager. You could share just your screen (working locally or through some "interviewing platform") or... The screen plus your camera. 
+3. **Second technical screening**: this is -certainly- a little more "intense" than the previous ones. You should expect "coding challenges" (like Fibonacci, reversing strings, palindromes...), "define which would be the output of...", exercises such as building a small `SPA` with one JS framework or library (like a TO-DO list with React), among others. You will be interacting with a Principal Engineer or Software Manager. You could share just your screen (working locally or through some "interviewing platform"), or... The screen plus your camera. 
 From all the interviews steps, normally this is the definitive but not the last one.
 Expected time: *around 1 hour*.
 
-    *Note about challenges with video:* Every time I was part of the "Recruitment Pipeline" (either as  IC or Manager) I deliberately banned this. I prefer "take home" activities, and, as last resource, screen-sharing. Never camera! If you are a Manager or Interviewer and you are reading this, remember... Be empathetic! That Person has a lot on his/her shoulders! Certainly, you don't need to make her/him more vulnerable to prove knowledge nor tenacity.
+    *Note about challenges that include "camera sharing":* Every time I am part of the "Recruitment Pipeline" (either as IC or Manager) I deliberately ban this practice. Always prefer "take home" activities and, as last resource, "screen sharing". If you want to engage more closely with the candidate, invite her/him to the office or host a video sharing call to talk about expectations, goals... Remember to be empathetic! That Person has a lot on his/her shoulders! Certainly, you don't need to make her/him more vulnerable to prove knowledge nor tenacity.
 
-4. **On-site interview**: Great news! If you got to this point, probably you will receive an offer.
-Expected time: *most of the companies will have you around 5 hours, however, there is a growing number of enterprises that have adopted the 2.30 hs model*. We do appreciate these last!
+4. **On-site interview**: For most Managers and Teams I know, this is -primarily- about interaction (behavior); before extending an offer, the Hiring Manager needs to ensure that *"everyone"* is on-board without major objections. If not, she could compromise the wholeness of the Group.
 
-  * **Presentation** and pseudo-interview with someone from HR or People Department explaining the process.  
+    *Note*: Please "be yourself". People are not pursuing a particular standard or stereotype... We just want to avoid short-term contrition that generally ends in "he/she was not a Cultural fit". We want to resolve if we can relate and have a good time working together. 
 
-  * Interview with **DevOps Team or Sennior Devs**, Developers or FullStack (here you can expect more conversational questions). Example: Systems or API design, pipelines, CI/CD...
+    Expected time: usually you will spend 5 hours, but, there is a growing number of ventures adopting the 2.30 hs model.
 
-  * Interview with **Product Team**.
+
+    * **Reception and Welcome**: the in-house Recruiter who has been guiding you during the process will setup a place for you and share how the day will be. He/She will provide you a card with each "slot" and your "Interviewers" and, after every  "round", she/he assure that you have the basic human needs covered. Sometimes, this person can be accompanied by a representative of People Department (previously known as HR).
+
+    * Interview with **DevOps Team, Architect or Sr. DEV**, Developers or FullStack (here you can expect more conversational questions). Example: Systems or API design, pipelines, CI/CD...
+
+    * Interview with **Product Team**.
   This is out of the grid. After countless interviews there´s no real pattern here since "Product" as some-kind of your second boss, they care about your behavioral and human side. However, you could expect questions related to Agile/SCRUM, Communicational topics, challenges that you had and how you faced them, errors that you committed... They will try to determine if you will be a good organic addition.
 
-  * Interview with **Developers or FullStack** (your co-workers). Here you can expect more technical questions, have to write some code, whiteboard and... Algorithms! From a strictly human POV, you can find 4 types of groups (or particulars):
+    * Interview with **Developers or FullStack** (your co-workers). Here you can expect more technical questions, have to write some code, whiteboard and... Algorithms! From a strictly human POV, you can find 4 types of groups (or particulars):
 
-    - **Egocentric or insecure** (self-centered people are firstly, insecure). They will try to show you how wrong you are and how well-versed they are in opposition. For this group or person, there is no Interview, if not, preserve the status-quo. The more knowledgeable you show, the more reactive they will be. If they feel threatened in their knowledge, they are going to be your first detractors.
-    - **Unprepared**. You will see them coming with a crumpled paper, asking for your resume (yes, the one that you sent them previously 2 or 3 times) and jumping to some "JSFiddle/CodePen/JSBIN" exercise coded by other member of the Team and/or copied/pasted from some "interview coding exercises" search result.
-    - **High bar**. Big companies with the "Culture of Selectivity", like Google, usually ends in this bucket. They are aware they are building "the Path" so, even when they are not totally sure of what are they looking, they do know they want the best. Here reigns the logic of the less, the better.
-    - **Unifiers**. Generally, smart people holding real power inside the Company. They care about the enterprise they represent and try to hire individuals as prepared as them understanding they are betting on the future (your future). Mentors are a great example. They don´t care about mistakes if not how are you reasoning. These are the cases where candidates feel their performance was really bad, however, they receive -indistinctly- an offer.
+      - **Egocentric or insecure** (self-centered people are firstly, insecure). They will try to show you how wrong you are and how well-versed they are in opposition. For this group or person, there is no Interview, if not, preserve the status-quo. The more knowledgeable you show, the more reactive they will be. If they feel threatened in their knowledge, they are going to be your first detractors.
+      - **Unprepared**. You will see them coming with a crumpled paper, asking for your resume (yes, the one that you sent them previously 2 or 3 times) and jumping to some "JSFiddle/CodePen/JSBIN" exercise coded by other member of the Team and/or copied/pasted from some "interview coding exercises" search result.
+      - **High bar**. Big companies with the "Culture of Selectivity", like Google, usually ends in this bucket. They are aware they are building "the Path" so, even when they are not totally sure of what are they looking, they do know they want the best. Here reigns the logic of the less, the better.
+      - **Unifiers**. Generally, smart people holding real power inside the Company. They care about the enterprise they represent and try to hire individuals as prepared as them understanding they are betting on the future (your future). Mentors are a great example. They don´t care about mistakes if not how are you reasoning. These are the cases where candidates feel their performance was really bad, however, they receive -indistinctly- an offer.
 
-  * Interview with the **Hiring Manager** (aka, your Boss). One of the greatest abilities of Officers is to delegate.
+    * Interview with the **Hiring Manager** (aka, your Boss). One of the greatest abilities of Officers is to delegate.
 
 ---
 
