@@ -32,8 +32,6 @@
     + [Recursion](./06_0_recursion.md)
     + [Flattening MD arrays](./07_0_flattening-multidimensional-arrays.md)
 
----
-
 
 ## Intro
 
@@ -101,27 +99,24 @@ Expected time: *around 1 hour*.
     Expected time: usually you will spend 5 hours, but, there is a growing number of ventures adopting the 2.30 hs model.
 
 
-    * **Reception and Welcome**: the in-house Recruiter who has been guiding you during the process will setup a place for you and share how the day will be. He/She will provide you a card with each "slot" and your "Interviewers" and, after every  "round", she/he assure that you have the basic human needs covered. Sometimes, this person can be accompanied by a representative of People Department (previously known as HR).
+    * **Reception and Welcome**: the in-house Recruiter who has been guiding you during the process will setup a place for you and remind you the agenda for the day. After each "round", she/he will assure that your basic human needs and comfort are well covered. Sometimes, this person can be accompanied by a representative of People Department (previously known as HR).
 
-    * Interview with **DevOps Team, Architect or Sr. DEV**, Developers or FullStack (here you can expect more conversational questions). Example: Systems or API design, pipelines, CI/CD...
+      *Note about the "agenda"*: Serious companies (aka, ventures with good protocols and procedures) will attach to the "On-Site invitation" the proper agenda with your Interviewers information (roles, topic to cover, LinkedIn profiles) an other useful data like: dress-code, how to get there, nearby sites of interest, etc.
 
-    * Interview with **Product Team**.
-  This is out of the grid. After countless interviews there´s no real pattern here since "Product" as some-kind of your second boss, they care about your behavioral and human side. However, you could expect questions related to Agile/SCRUM, Communicational topics, challenges that you had and how you faced them, errors that you committed... They will try to determine if you will be a good organic addition.
+    * Interview with the **Hiring Manager**:
 
-    * Interview with **Developers or FullStack** (your co-workers). Here you can expect more technical questions, have to write some code, whiteboard and... Algorithms! From a strictly human POV, you can find 4 types of groups (or particulars):
+    * Interview with **DevOps Team, Architect or Sr. DEV**: Developers and/or FullStack applicants, this is usually the "Design System" part of the interview. For example, how to create a `chat app`. Also, everything related to service: `CI/CD`, general stack and infrastructure...
 
-      - **Egocentric or insecure** (self-centered people are firstly, insecure). They will try to show you how wrong you are and how well-versed they are in opposition. For this group or person, there is no Interview, if not, preserve the status-quo. The more knowledgeable you show, the more reactive they will be. If they feel threatened in their knowledge, they are going to be your first detractors.
-      - **Unprepared**. You will see them coming with a crumpled paper, asking for your resume (yes, the one that you sent them previously 2 or 3 times) and jumping to some "JSFiddle/CodePen/JSBIN" exercise coded by other member of the Team and/or copied/pasted from some "interview coding exercises" search result.
-      - **High bar**. Big companies with the "Culture of Selectivity", like Google, usually ends in this bucket. They are aware they are building "the Path" so, even when they are not totally sure of what are they looking, they do know they want the best. Here reigns the logic of the less, the better.
-      - **Unifiers**. Generally, smart people holding real power inside the Company. They care about the enterprise they represent and try to hire individuals as prepared as them understanding they are betting on the future (your future). Mentors are a great example. They don´t care about mistakes if not how are you reasoning. These are the cases where candidates feel their performance was really bad, however, they receive -indistinctly- an offer.
+    * Interview with **Product Team**: This is out of the grid and, generally, reserved for senior positions. Always keep in mind that you **co-create** value with others, and, among those others, Product is without doubts the one who represents and maximize value. You will be asked about your previous works, your experience working in cross-functional teams, obstacles and difficulties and how did you overcome them. Likewise, exposure to Agile/SCRUM.  
 
-    * Interview with the **Hiring Manager** (aka, your Boss). One of the greatest abilities of Officers is to delegate.
+    * Interview with **Software and/or FullStack Eng.** (your co-workers). Here you can expect more technical questions related to the role, have to write some code, whiteboard challenges and... `Algorithms and Data Structures!` 
 
----
+    * Interview with a **C-suite executive**:
+
 
 ## Red Flags
 
-I always say I´m interviewing the Company (and, in consequence, them) as they do it with me; perhaps, in an even deeper way. You should do the same! Remember that Interviews are a dual process and you should dispel all your doubts.
+I always say I´m interviewing the Company as they do it with me; perhaps, in an even deeper way. You should do the same! Remember that Interviews are a dual process and you should dispel all your doubts.
 
 What are "Red Flags"...?
 For me, behaviors that go against my principles, manners or that could affect the daily work relationship or "workspace peace".
