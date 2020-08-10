@@ -73,7 +73,7 @@ updt(1)
 console.log(primitive)
 // 1
 
-console.log(window.var)
+console.log(window.primitive)
 // 1
 ```
 
@@ -131,7 +131,7 @@ console.log(primitive)
 // 456
 ```
 
-Remember `var` is NOT scoped at the `block-level`.
+Remember `var` is **NOT scoped** at the `block-level`.
 We are re-declaring our `primitive` variable (doable with `var`) and assigning a new value.
 BTW, remember that JS is going to process variable declarations before execution (aka, `hoisting`). So, the engine will do the following:
 
@@ -154,4 +154,60 @@ console.log(primitive)
 // 123
 ```
 
-As you probably guessed, for everything inside the `if` scope the value of `primitive` is going to be `456`. For the rest, it will be `123`
+As you probably guessed, for everything inside the "`if` scope" the value of `primitive` is going to be `456`. For the rest, it will be `123`. We are going to obtain "similar" results with `const`, with the difference that once declared and assigned the value, we won't be able to mutate it. 
+
+```js
+if(1) {
+  const primitive = 456
+  primitive = 789
+  console.log(primitive)
+}
+```
+
+Result: `TypeError: Assignment to constant variable.`
+
+One more thing to remember... Global constants (`let` and `const`) do not become properties of the window object, unlike var variables.
+
+```js
+var global = 1
+let notGlobal0 = 2
+const notGlobal1 = 3
+
+console.log(
+  `
+  ${window.global}
+  ${window.notGlobal0}
+  ${window.notGlobal1}
+  `
+)
+```
+
+Result:
+
+```js
+  1
+  undefined
+  undefined
+```
+
+3. `const` holding a `reference type` value and a `function updating` (or mutating) the data source (original variable)
+
+```js
+const referenceValue = [1,2,3]
+
+function addNumberToArray(arr, num) {
+  arr.push(num)
+  return arr
+}
+
+console.log(addNumberToArray(referenceValue, 4))
+// [ 1, 2, 3, 4 ]
+
+console.log(referenceValue)
+// [ 1, 2, 3, 4 ]
+```
+
+We have seen `mutations` (and immutability patterns) in several sections. But, it never hurts to refresh the memory.
+
+Look at the snippet above...? Is the return of `addNumberToArray()` what you were expecting...?
+If not, let's make a quick go-through.
