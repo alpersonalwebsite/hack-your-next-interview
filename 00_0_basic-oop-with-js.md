@@ -211,3 +211,79 @@ We have seen `mutations` (and immutability patterns) in several sections. But, i
 
 Look at the snippet above...? Is the return of `addNumberToArray()` what you were expecting...?
 If not, let's make a quick go-through.
+
+We declared a `constant` holding an `array` (of numbers) as value.
+We declared a `function` which receives as arguments an `array` and a `number`. This function pushes the number as an item into the passed array (aka, it adds the item to the end of the array); then, it returns its value.
+
+However... When we are logging both, the return of our function and our original constant, we can see that both are returning the "same value".
+
+*First feeling:* Didn't we say we cannot reassign the value of a `constant`?
+Yes... Technically, we are not changing its value if not altering one of its properties (same for item's arrays)
+
+This **reassigns the values** and produces the expected ERROR
+
+```js
+const numbers = [1,2,3]
+numbers = [1,2,3,4]
+
+const names = {
+  dad: 'Peter',
+  son: 'Pan'
+}
+
+names = {
+  dad: 'Peter',
+  son: 'Pan',
+  sister: 'Wendy'
+}
+```
+
+Result: `TypeError: Assignment to constant variable.`
+
+Now, this doesn't reassign. It just update the property/list.
+
+```js
+const numbers = [1,2,3]
+numbers.push(4)
+
+const names = {
+  dad: 'Peter',
+  son: 'Pan'
+}
+
+names.sister = 'Wendy'
+
+
+console.log(numbers)
+// [ 1, 2, 3, 4 ]
+
+console.log(names)
+// { dad: 'Peter', son: 'Pan', sister: 'Wendy' }
+```
+
+From Mozilla's docs...
+> The const declaration creates a read-only reference to a value. It does not mean the value it holds is immutable—just that the variable identifier cannot be reassigned. For instance, in the case where the content is an object, this means the object's contents (e.g., its properties) can be altered.
+
+
+*Second feeling:* Why did the original constant change..?
+
+Maybe you tried to declare a variable within the function, assign as its value the `array` we ar passing and then perform the operation...
+
+```js
+function addNumberToArray(arr, num) {
+  const newReferenceValue = arr
+  newReferenceValue.push(num)
+  return newReferenceValue
+}
+```
+
+Yet, the output is still the same.
+And this is because we are dealing with `reference types`. 
+Objects (and arrays) are reference types... This means that every time we perform an operation over that object, we are not doing it on the object itself if not on its reference.
+
+Time to see some basic examples:
+
+```js
+
+```
+
