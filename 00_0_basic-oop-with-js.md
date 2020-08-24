@@ -14,7 +14,22 @@ const myObj = {};
 const myObj = new Object();
 ```
 
-*Literal notation* is faster and less verbose.
+*Literal notation* is faster and less verbose and it should be your first option.
+
+**Sample object**
+
+```js
+const character = {
+  name: 'Peter',
+  latName: 'Pan',
+  greeting: (yourName) => `Hello, ${yourName}`
+}
+
+console.log(
+  character.greeting('Wendy')
+)
+```
+
 
 ## Adding properties
 
@@ -37,6 +52,27 @@ console.log(myObj['property with special chars'])
 
 console.log(myObj.someMethod())
 // Hi!
+```
+
+A few notes before jumping to the next topic:
+
+1. You can take advantage of named function to improve your debugging work (instead of anonymous functions). Here will not have much sense, but when you are going through stack traces it could make thing clearer and easier to understand or debug.
+```js
+myObj.someMethod = function theFunctionName() {
+  return 'Hi!'
+}
+```
+
+2. Feel free to use **ES2015**
+```js
+myObj.someMethod = () => {
+  return 'Hi!'
+}
+```
+
+3. Since we are just returning, if you want to have a "cleaner" code you can do:
+```js
+myObj.someMethod = () => 'Hi!'
 ```
 
 ## Removing properties
