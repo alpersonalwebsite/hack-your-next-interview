@@ -265,9 +265,9 @@ From Mozilla's docs...
 > The const declaration creates a read-only reference to a value. It does not mean the value it holds is immutable—just that the variable identifier cannot be reassigned. For instance, in the case where the content is an object, this means the object's contents (e.g., its properties) can be altered.
 
 
-*Second feeling:* Why did the original constant change..?
+*Second feeling:* Why did the original constant change...?
 
-Maybe you tried to declare a variable within the function, assign as its value the `array` we ar passing and then perform the operation...
+Maybe you tried to declare a variable within the function, assigned as its value the `array` we are passing and then, performed the operation...
 
 ```js
 function addNumberToArray(arr, num) {
@@ -278,12 +278,70 @@ function addNumberToArray(arr, num) {
 ```
 
 Yet, the output is still the same.
-And this is because we are dealing with `reference types`. 
-Objects (and arrays) are reference types... This means that every time we perform an operation over that object, we are not doing it on the object itself if not on its reference.
 
-Time to see some basic examples:
+And this is because we are dealing with `reference types`. 
+Objects (and arrays) are reference types... This means that every time we perform an operation over the reference, we are actually affecting the original object itself.
+
+*Time to see some basic examples:*
+
+Here we are declaring a constant with an object as value. That object is created using `literal notation`
+Then, we declare a new constant which points to the previous one.
+That why when we compare both, the result is **true**: they refer to the same object.
 
 ```js
+const character = {
+  name: 'Peter',
+  latName: 'Pan'
+}
 
+const refToObj = character
+
+console.log(refToObj)
+console.log(character)
+
+// { name: 'Peter', latName: 'Pan' }
+// { name: 'Peter', latName: 'Pan' }
+
+console.log(character === refToObj)
+// true 
 ```
+
+Here we have 2 objects *with the same keys and values*.
+When we compare both, the result is **false**
+
+```js
+const peter1 = {
+  name: 'Peter',
+  latName: 'Pan'
+}
+
+const peter2 = {
+  name: 'Peter',
+  latName: 'Pan'
+}
+
+console.log(peter1)
+console.log(peter2)
+
+// { name: 'Peter', latName: 'Pan' }
+// { name: 'Peter', latName: 'Pan' }
+
+console.log(peter1 === peter2)
+// false 
+```
+
+This is because comparisons between objects is by `reference` (not value), and, as you can see, each constant (object) refers to itself.  
+
+**DO NOT do the following. Take it just as an illustration**
+
+What happens if we convert into strings both object before comparing them...
+
+```js
+console.log(JSON.stringify(peter1) === JSON.stringify(peter2))
+// true 
+```
+
+... since string comparisons are by `value`, both strings are equal.
+
+---
 
