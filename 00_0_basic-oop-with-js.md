@@ -21,7 +21,7 @@ const myObj = new Object();
 ```js
 const character = {
   name: 'Peter',
-  latName: 'Pan',
+  lastName: 'Pan',
   greeting: (yourName) => `Hello, ${yourName}`
 }
 
@@ -30,6 +30,34 @@ console.log(
 )
 ```
 
+**Quick note about THIS:**
+
+We are going to address `this` keyword in other section. But for the moment, and to keep the sight in `OOP`, just remember... *Arrow functions close over `this` of the lexically enclosing context.*
+So, if you need to access to a property of your object, use regular functions.
+
+Examples:
+
+The context of our arrow function is the Global/Window object; the context of our "regular" function is the base object.
+
+```js
+const name = 'Global-Peter'
+
+const character = {
+  name: 'Scoped-Peter',
+  arrowGreeting: () => {
+    return `My name is ${name}`
+  },
+  funcGreeting() {
+    return `My name is ${this.name}`
+  }
+}
+
+console.log(
+  character.arrowGreeting(),
+  character.funcGreeting()
+)
+
+```
 
 ## Adding properties
 
