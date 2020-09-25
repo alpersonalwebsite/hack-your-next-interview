@@ -14,8 +14,6 @@
   * [Useful methods](./00_0_useful-methods.md)
   * [Reversing without reverse() method](./00_1_useful-methods-reversing.md)
   * [Sorting without sort() method](00_1_useful-methods-sorting.md)
-  * [Basic ES2015 or ES6](./00_0_basic-es2015.md)
-  * [Callbacks, Promises and Async/Await](./00_0_callbacks-promises-async_await.md)
 
   * Data Structures
     + [Queue and Stack](../../../data-structures-and-algorithms/blob/master/05_0_queue-and-stack.md)
