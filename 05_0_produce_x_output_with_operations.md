@@ -1,14 +1,16 @@
-# Produce X output through basic mathematical operations
+# Produce "X" output through basic mathematical operations
 
-We have an `array` and we want to find the `2 numbers` (in cases of multiple combinations the `first 2`) that through `addition, subtraction, multiplication or division` produces `x` number.
+We have an `array` and we want to find the `2 numbers` which through `addition, subtraction, multiplication or division` produces `x` number.
 
 Examples:
 * `[4,1,3,6]` and we want to `add to 7`
 
-   * First combination respecting order: `4,3`
-   * All (2 num) combinations: `4,3` and `1,6` 
+   * First combination of 2 numbers respecting order:
+     - Retrieving the numbers: `4,3`
+     - Retrieving the indexes of those numbers in the array: `0,2`
+   * All combinations of 2 numbers: `4,3` and `1,6` 
 
-Sometimes, the request can include sorting. Remember to check our [Sorting Section](./00_1_useful-methods-sorting)
+Sometimes, the request can include sorting. Remember to check our [Sorting Section](./00_1_useful-methods-sorting.md). This could be particularly useful, if the interviewer allows it, to speed your program: 
 
 Also, you could receive a `string` of numbers and have to produce first an `array`. *Important*: this will work just with *single digits*.
 ```javascript
@@ -23,25 +25,25 @@ Output:
 ## Solution: nested for loops (quadratic)
 
 ```javascript
-const arr1 = [4,1,3,6];
+const arr = [4,1,3,6];
+const result = 7;
 
-function addTo7(arr) {
+function addTo(arr, result) {
   for (let i = 0; i < arr.length; i++ ) {
     for (let j = i + 1; j < arr.length; j++) {
-      console.log(arr[i], arr[j])
-      if (arr[i] + arr[j] === 7) return [arr[i], arr[j]]
+      // If you want to log each combination
+      // console.log(arr[i], arr[j])
+      if (arr[i] + arr[j] === result) return [arr[i], arr[j]]
     }
   }
 }
 
 
-console.log(addTo7(arr1))
+console.log(addTo(arr, result))
 ```
 
 Output:
 ```
-4 1
-4 3
 [4, 3]
 ```
 
@@ -49,9 +51,9 @@ Output:
 
 Now, let's address the case with an `ordered array`.
 
-First, we are going to `sort` our array. Check [Sorting Section](./00_1_useful-methods-sorting) for more information.
+First, we are going to `sort` our array. Check [Sorting Section](./00_1_useful-methods-sorting.md) for more information.
 
-I'm picking (as before) the simplest way: `.sort()`. However, remember that in the context of an Interview, if you have to `sort or order an array`, your Interviewer (probably) will not take the built-in array method `.sort()` as a valid approach. 
+I'm picking (as before) the simplest way: `.sort()`. However, remember that in the context of an interview, if you have to `sort or order an array`, your interviewer -probably- will not take the built-in array method `.sort()` as a valid approach. 
 
 ```javascript
 const arr1 = [4,1,3,6];
