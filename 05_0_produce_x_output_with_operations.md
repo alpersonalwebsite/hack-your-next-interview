@@ -114,7 +114,52 @@ Output:
 [ [ 1, 9 ], [ 1, 9 ], [ 2, 8 ], [ 4, 6 ] ]
 ```
 
----
+### Solution 3: hash table
+
+* Time complexity: O(n) or linear
+* Space complexity: O(n) or linear
+
+This solution is the preferred one and it avoids (also) duplicates in the results: 
+`[ [ 6, 4 ], [ 8, 2 ], [ 9, 1 ] ]`
+
+```js
+function addUp(arr, target) {
+
+  const result = []
+
+  const ht = {}
+  
+  for (let element of arr) {
+    if (ht[target - element]) {
+      result.push([element, (target - element)])
+    } else ht[element] = true
+  }
+
+	return result
+}
+
+addUp([], 5)
+addUp([1], 5)
+addUp([1,2,6,8], 5)
+addUp([1,2,4,3], 5)
+
+// Extra tests
+addUp([1,2,4,3,1,5], 5)
+addUp([1,2,4,3,6,1,8,10,9], 10)
+```
+
+Output:
+
+```
+[]
+[]
+[]
+[ [ 4, 1 ], [ 3, 2 ] ]
+[ [ 4, 1 ], [ 3, 2 ] ]
+[ [ 6, 4 ], [ 8, 2 ], [ 9, 1 ] ]
+```
+
+<!-- ---
 
 Now, let's address the case with an `ordered array`.
 
@@ -233,4 +278,4 @@ Processing 3 - 9
 [3, 9]
 
 [1, 3, 4, 6, 7, 8, 8, 9, 10, 12]
-```
+``` -->
