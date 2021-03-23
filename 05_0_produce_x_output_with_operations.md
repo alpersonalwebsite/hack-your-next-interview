@@ -1,19 +1,21 @@
 # Produce "X" output through basic mathematical operations
 
-We have an `array` and we want to find the `2 numbers` which through `addition, subtraction, multiplication or division` produces `x` number.
+We have an `array` and we want to find `2 numbers` which through `addition, subtraction, multiplication or division` produces `x` result (aka, number).
 
 Examples:
 * `[4,1,3,6]` and we want to `add to 7`
 
-   * First combination of 2 numbers respecting order:
+   * **First combination** of 2 numbers respecting order `4,3`: 
      - Retrieving the numbers: `4,3`
      - Retrieving the indexes of those numbers in the array: `0,2`
-   * All combinations of 2 numbers: `4,3` and `1,6` 
+   * **All combinations** of 2 numbers: `4,3` and `1,6` 
 
-Sometimes, the request can include sorting. Remember to check our [Sorting Section](./00_1_useful-methods-sorting.md). This could be particularly useful, if the interviewer allows it, to speed your program: 
+Sometimes, the request can include **sorting**. Remember to check our [Sorting Section](./00_1_useful-methods-sorting.md). This could be particularly useful, if the interviewer allows it, to speed your program: 
 
-Also, you could receive a `string` of numbers and have to produce first an `array`. *Important*: this will work just with *single digits*.
-```javascript
+Also, you could receive a `string` of numbers and have to produce -first- an `array`. 
+*Important*: this will work just with *single digits*.
+
+```js
 '347932'.split('')
 ```
 
@@ -22,29 +24,94 @@ Output:
 ["3", "4", "7", "9", "3", "2"]
 ```
 
-## Solution: nested for loops (quadratic)
+## Find the pair of numbers which add up to a particular result
 
-```javascript
-const arr = [4,1,3,6];
-const result = 7;
+### Solution 1: nested for loops
+*Constraint*: preserve order and traverse from left to right.
 
-function addTo(arr, result) {
-  for (let i = 0; i < arr.length; i++ ) {
-    for (let j = i + 1; j < arr.length; j++) {
-      // If you want to log each combination
-      // console.log(arr[i], arr[j])
-      if (arr[i] + arr[j] === result) return [arr[i], arr[j]]
-    }
-  }
+* Time complexity: O(n^2) or quadratic 
+* Space complexity: O(1) or constant
+
+```js
+function addUp(arr, target) {
+
+  const result = []
+  
+	for (let i = 0; i < arr.length; i++) {
+		for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] === target) result.push([arr[i], arr[j]])
+		}
+	}
+	
+	return result
 }
 
-
-console.log(addTo(arr, result))
+addUp([], 5)
+addUp([1], 5)
+addUp([1,2,6,8], 5)
+addUp([1,2,4,3], 5)
 ```
 
 Output:
+
 ```
-[4, 3]
+[]
+[]
+[]
+[ [ 1, 4 ], [ 2, 3 ] ]
+```
+
+### Solution 2: Sorting and using pointers
+
+* Time complexity: O(nlogn) or logarithmic
+* Space complexity: O(1) or constant
+
+```js
+function addUp(arr, target) {
+
+  const result = []
+
+  const newArr = [...arr].sort((a, b) => a - b)
+
+  let leftPointer = 0
+  let rightPointer = newArr.length - 1
+
+  // while pointers are not overlapping
+  while (leftPointer < rightPointer) {
+    const sum = newArr[leftPointer] + newArr[rightPointer] 
+    
+    if (sum === target) {
+      result.push([newArr[leftPointer], newArr[rightPointer]])
+      leftPointer++
+    } else if (sum < target) {
+      leftPointer++
+    } else if (sum > target) {
+      rightPointer--
+    }
+  }
+
+	return result
+}
+
+addUp([], 5)
+addUp([1], 5)
+addUp([1,2,6,8], 5)
+addUp([1,2,4,3], 5)
+
+// Extra tests
+addUp([1,2,4,3,1,5], 5)
+addUp([1,2,4,3,6,1,8,10,9], 10)
+```
+
+Output:
+
+```
+[]
+[]
+[]
+[ [ 1, 4 ], [ 2, 3 ] ]
+[ [ 1, 4 ], [ 1, 4 ], [ 2, 3 ] ]
+[ [ 1, 9 ], [ 1, 9 ], [ 2, 8 ], [ 4, 6 ] ]
 ```
 
 ---
