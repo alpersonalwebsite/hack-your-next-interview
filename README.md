@@ -28,7 +28,7 @@
     + [Anagrams](./04_0_anagrams.md)
     + [Produce X output](./05_0_produce_x_output_with_operations.md)
     + [Recursion](./06_0_recursion.md)
-    + [Flattening MD arrays](./07_0_flattening-multidimensional-arrays.md)
+    + [Multidimensional Arrays](./07_0_multidimensional-arrays.md)
 
 
 ## Intro
