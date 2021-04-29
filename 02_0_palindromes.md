@@ -11,29 +11,130 @@ In our case, we need to reverse the string (for this example, the input will alw
 * Converting to `lowercase`
 * Replacing everything that is not a letter from `a-z` or a number from `0-9`
 
-## Solution:
+## Solution 1: with a new string
 
-```javascript
-function palinDrome(str) {
-  let result = '';
-  for (char of str) {
-    result = char + result;
+* Time complexity: O(n^2)
+Because we are doing string concatenations which creates new strings.
+
+* Space complexity: O(n)
+N is the length of the input string, in our example, `str`
+
+```js
+function isPalindrome(str) {
+  let reversedStr = ''
+  for (let i = str.length - 1; i >= 0; i-- ) {
+    reversedStr += str[i]
   }
-  return prepareString(result) === prepareString(str)
+  return reversedStr === str
 }
 
-function prepareString(str) {
-  return str.toLowerCase().replace(/[^a-z0-9]/g, '');
+isPalindrome('abcdcba')
+// true
+
+isPalindrome('abc')
+// false
+```
+
+### Solution 2: using an array
+
+* Time complexity: O(n) 
+* Space complexity: O(n)
+
+```js
+function isPalindrome(str) {
+  let reversedStrArray = []
+  for (let i = str.length - 1; i >= 0; i-- ) {
+    reversedStrArray.push(str[i])
+  }
+  return reversedStrArray.join('') === str
 }
 
-console.log(palinDrome('Amore, Roma.'));
+isPalindrome('abcdcba')
+// true
+
+isPalindrome('abc')
+// false
 ```
 
-## Result:
+### Solution 3: recursion
 
+* Time complexity: O(n) 
+* Space complexity: O(n) 
+
+*Note*: I'm adding the log statement so you can "easily see" what's going on every time we recurse.
+
+```js
+function isPalindrome(str, index = 0) {
+  // We want to compare the first and last letters
+  j = (str.length - 1) - index
+  console.log(str[index], str[j])
+  
+  if (index >= j) return true
+  else return str[index] === str[j] && isPalindrome(str, index + 1)
+}
+
+isPalindrome('abcdcba')
+// 'a' 'a'
+// 'b' 'b'
+// 'c' 'c'
+// 'd' 'd'
+// true
+
+isPalindrome('abc')
+// 'a' 'c'
+// false
 ```
-true
+
+**This is the tail recursion solution**
+Depends on the language's compiler
+
+```js
+function isPalindrome(str, index = 0) {
+  // We want to compare the first and last letters
+  j = (str.length - 1) - index
+  console.log(str[index], str[j])
+  
+  if (index >= j) return true
+  if (str[index] != str[j]) return false
+  return isPalindrome(str, index + 1)
+}
+
+isPalindrome('abcdcba')
+// true
+
+isPalindrome('abc')
+// false
 ```
+
+### Solution 4: with pointers
+Preferred one. 
+
+* Time complexity: O(n) 
+* Space complexity: O(1) 
+We are just storing our pointers 
+
+
+```js
+function isPalindrome(str, index = 0) {
+  // We want to compare the first and last letters
+  leftPointer = 0
+  rightPointer = str.length - 1
+  
+  while(leftPointer < rightPointer) {
+    if (str[leftPointer] !== str[rightPointer]) return false
+    leftPointer += 1
+    rightPointer -= 1
+  }
+  return true
+}
+
+isPalindrome('abcdcba')
+// true
+
+isPalindrome('abc')
+// false
+```
+
 
 ---
 
