@@ -26,7 +26,7 @@
     + [Palindromes](./02_0_palindromes.md)
     + [Occurrences](./03_0_occurrences.md)
     + [Anagrams](./04_0_anagrams.md)
-    + [Produce X output](./05_0_produce_x_output_with_operations.md)
+    + [Produce X output](./05_0_produce_x_output.md)
     + [Recursion](./06_0_recursion.md)
     + [Multidimensional Arrays](./07_0_multidimensional-arrays.md)
 
