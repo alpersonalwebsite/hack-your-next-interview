@@ -1,4 +1,42 @@
-# Produce "X" output through basic mathematical operations
+# Produce "X" output
+
+## Produce "X" message given a string of characters
+
+We have `2 strings`: 
+1. An `input` string with the characters to use
+2. An`output` string or the string we want to form (or produce) with the previous input
+
+Some constraints:
+* We care about symbols including white space `' '`
+* We care about lower/uppercase (`T` is not equals to `t`)
+* We care about the chars repetition; so, to produce `hello` we need to have 2 `l` on our input string
+
+
+```js
+function generateMessage(input, message) {
+  const hs = {}
+  
+  for (let character of input) {
+    if (hs[character] > 0) {
+       hs[character] += 1
+    }
+    else hs[character] = 1
+  }
+  
+  for (let character of message) {
+    if (!hs[character]) return false
+    else hs[character]--
+  }
+
+  return true
+}
+
+
+generateMessage('helo world', 'hello world')
+// false
+```
+
+## Produce "X" output through basic mathematical operations
 
 We have an `array` and we want to find `2 numbers` which through `addition, subtraction, multiplication or division` produces `x` result (aka, number).
 
@@ -24,9 +62,9 @@ Output:
 ["3", "4", "7", "9", "3", "2"]
 ```
 
-## Find the pair of numbers which add up to a particular result
+### Find the pair of numbers which add up to a particular result
 
-### Solution 1: nested for loops
+#### Solution 1: nested for loops
 *Constraint*: preserve order and traverse from left to right.
 
 * Time complexity: O(n^2) or quadratic 
@@ -61,7 +99,7 @@ Output:
 [ [ 1, 4 ], [ 2, 3 ] ]
 ```
 
-### Solution 2: Sorting and using pointers
+#### Solution 2: Sorting and using pointers
 
 * Time complexity: O(nlogn) or logarithmic
 * Space complexity: O(1) or constant
@@ -114,7 +152,7 @@ Output:
 [ [ 1, 9 ], [ 1, 9 ], [ 2, 8 ], [ 4, 6 ] ]
 ```
 
-### Solution 3: hash table
+#### Solution 3: hash table
 
 * Time complexity: O(n) or linear
 * Space complexity: O(n) or linear
