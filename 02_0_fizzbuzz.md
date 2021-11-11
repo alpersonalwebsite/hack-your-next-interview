@@ -1,15 +1,22 @@
 # FizzBuzz
 
 Output or log from 1 to n, sequentially...
-* If number is multiple of 3 >> Fizz
-* If number is multiple of 5 >> Buzz
-* If number is multiple of 3 and 5 >> FizzBuzz
+* Fizz >> If number is multiple of 3
+* Buzz >> If number is multiple of 5
+* FizzBuzz >> If number is multiple of 3 and 5
 * In other cases, the value of the number
+
+*NOTE:* You will see this question also in the form of... 
+> Given a number, return `Fizz`, `Buzz`, `FizzBuzz` or the `number`
 
 ## Solution:
 
 ```javascript
 function fizzBuzz(num) {
+  
+  // We check that the type of num is number
+  if (typeof num !== 'number') return NaN;
+  
   for (let i = 1; i < num; i++) {
     if (i % 15 === 0) {
       console.log('FizzBuzz');
