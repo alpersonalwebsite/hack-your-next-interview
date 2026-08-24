@@ -172,5 +172,5 @@ console.log(reverseArray(arr1))
 
 Result:
 ```
-[6, 5, 4, 3, 2, 1]
+[ 6, 5, 4, 3, 2, 1 ]
 ```

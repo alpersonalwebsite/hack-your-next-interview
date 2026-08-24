@@ -59,8 +59,10 @@ console.log(result)
 ```
 
 Output:
-`Not A`
 
+```
+Not A
+```
 But... What happens if we want to execute "some amount of logic", setting, for example, the value of our expression to a boolean, `true`, and checking if one our cases logic results in true.
 
 Example:
@@ -154,19 +156,21 @@ Things to retain from  this exercise...
 
 Example: `function declaration` is hoisted
 
-Output: `[object Object] { ... }`
-
-Code;
 ```javascript
 const rectangle = new Rectangle()
 function Rectangle() {}
 console.log(rectangle)
 ```
 
+Output:
 
-Example: `class declaration` is NOT hoisted
+```
+Rectangle {}
+```
 
-Output: `"ReferenceError: Cannot access 'Rectangle' before initialization`
+
+Example: `class declaration` is NOT hoisted, so the same shape throws
+`ReferenceError: Cannot access 'Rectangle' before initialization`
 
 Code:
 ```javascript
@@ -302,14 +306,25 @@ console.log(match)
 
 Result: `null`
 
-And, if we change the sequence (string) to:
+And, if we change the sequence (string) so that it does match:
+
 ```javascript
 const sequence = 'axxxa'
+const regex = /^([aeiou]).*\1$/
+
+console.log(sequence.match(regex))
 ```
 
 Result:
+
 ```
-["axxxa", "a"]
+[ 'axxxa', 'a', index: 0, input: 'axxxa', groups: undefined ]
 ```
+
+Worth looking at properly, because `match()` returns more than people expect. Element 0 is the whole match,
+element 1 is the first capturing group (the vowel that had to appear at both ends), and then it carries
+`index`, the original `input`, and `groups` for named groups, which is `undefined` here because this pattern
+has none. That is the difference from `test()`: you get the match data, and you pay for building it, which is
+why `test()` is the right call when all you want is the boolean.
 
 ---

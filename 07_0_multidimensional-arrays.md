@@ -16,7 +16,7 @@ const arr = [1, [2, [3 , [4]], [5]], 6]
 console.log(arr.flat(Infinity))
 ```
 
-Result: `[1, 2, 3, 4, 5, 6]`
+Result: `[ 1, 2, 3, 4, 5, 6 ]`
 
 
 
@@ -55,8 +55,7 @@ flat > nestedArr is [3,[4]]
 flat > nestedArr is [4]
 flat > nestedArr is [5]
 flatten > nestedArr is [1,[2,[3,[4]],[5]],6]
-
-[1, 2, 3, 4, 5, 6]
+[ 1, 2, 3, 4, 5, 6 ]
 ```
 
 ---
@@ -114,6 +113,6 @@ function mdArraySum(array, multiplier = 1) {
   return sum * multiplier
 }
 
-mdArraySum([1, [3,6], [-1, [-8, 1], 8]])
+console.log(mdArraySum([1, [3,6], [-1, [-8, 1], 8]]))
 // -9
 ```

@@ -34,6 +34,11 @@
  *   b. otherwise, a run of `//` comments at COLUMN ZERO placed directly under a
  *      top-level statement. Column zero is what stops a comment inside a
  *      function body from being read as program output.
+ *   c. otherwise, a trailing comment on a `console.log` line itself, as in
+ *      `console.log(a, b); // 1 2`, which is the tidiest form for one line of
+ *      output. Restricted to lines containing `console.log(` on purpose: without
+ *      that, any explanatory trailing comment anywhere would be read as an
+ *      expected result.
  *
  * A block with neither must print nothing. If it prints anything, that is
  * reported rather than ignored: an undocumented line is how a sample drifts.
@@ -110,13 +115,31 @@ function followingOutput(all, index, lines) {
   return next
 }
 
-/** Inline expectations: `//` runs at column zero under a top-level statement. */
+/**
+ * Inline expectations, in source order: either a `//` run at column zero under a
+ * top-level statement, or a trailing comment on a `console.log` line.
+ */
 function inlineExpectations(source) {
   const lines = source.split('\n')
   const out = []
   for (let i = 0; i < lines.length; i++) {
-    if (!/^\S.*[);]\s*$/.test(lines[i])) continue
-    if (/^\/\//.test(lines[i])) continue
+    const line = lines[i]
+    if (/^\/\//.test(line)) continue
+
+    // Trailing form. Gated on `console.log(` so an ordinary explanatory comment
+    // cannot be mistaken for an expected result.
+    // `(?!\s)` is a LOOKAHEAD, not `^\S`. Consuming the first character means a
+    // `console.log(` sitting at column zero can never be matched afterwards,
+    // which is measurably what happened: the four samples in
+    // basic-questions-and-challenges.md that document their output this way were
+    // reported as documenting nothing at all.
+    const trailing = /^(?!\s).*console\.log\(.*\/\/ ?(.*)$/.exec(line)
+    if (trailing) {
+      out.push({ tsLine: i + 1, expected: [trailing[1].replace(/\s+$/, '')] })
+      continue
+    }
+
+    if (!/^\S.*[);]\s*$/.test(line)) continue
     const run = []
     let j = i + 1
     while (j < lines.length && /^\/\/( |$)/.test(lines[j])) {
@@ -219,8 +242,11 @@ for (const file of files) {
     let anchor = b.line
     if (outBlock) {
       expected = outBlock.source.split('\n')
+      // Trailing blank lines only. A LEADING blank line is real output when a
+      // sample logs a template literal that starts with a newline, so trimming
+      // it would make the documented block permanently disagree with the program
+      // and leave nothing able to fix it.
       while (expected.length && expected[expected.length - 1].trim() === '') expected.pop()
-      while (expected.length && expected[0].trim() === '') expected.shift()
       anchor = outBlock.line
     } else {
       // An inline `Result: \`value\`` line, within a couple of lines of the block.

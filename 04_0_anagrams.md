@@ -29,8 +29,10 @@ console.log(isAnagram(str1, str2))
 ```
 
 Result:
-`false`
 
+```
+false
+```
 ## Solution 2: Compare strings (object to string)
 
 ```javascript
@@ -137,6 +139,6 @@ console.log(isAnagram(str1, str2))
 
 Result:
 ```
-{h: 0, e: 0, l: 0, o: 0}
+{ h: 0, e: 0, l: 0, o: 0 }
 true
 ```
