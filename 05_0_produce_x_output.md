@@ -32,7 +32,7 @@ function generateMessage(input, message) {
 }
 
 
-generateMessage('helo world', 'hello world')
+console.log(generateMessage('helo world', 'hello world'))
 // false
 ```
 
@@ -54,12 +54,12 @@ Also, you could receive a `string` of numbers and have to produce -first- an `ar
 *Important*: this will work just with *single digits*.
 
 ```js
-'347932'.split('')
+console.log('347932'.split(''))
 ```
 
 Output:
 ```
-["3", "4", "7", "9", "3", "2"]
+[ '3', '4', '7', '9', '3', '2' ]
 ```
 
 ### Find the pair of numbers which add up to a particular result
@@ -67,8 +67,10 @@ Output:
 #### Solution 1: nested for loops
 *Constraint*: preserve order and traverse from left to right.
 
-* Time complexity: O(n^2) or quadratic 
-* Space complexity: O(1) or constant
+* Time complexity: `O(n^2)` or quadratic
+* Space complexity: `O(k)` for the k pairs it returns. Often written `O(1)` on the grounds that output does not
+  count, which is a fair convention as long as you say so, and solution 3 below counts its hash table, so
+  being silent about it here made the three solutions look comparable when they were measured differently.
 
 ```js
 function addUp(arr, target) {
@@ -84,10 +86,10 @@ function addUp(arr, target) {
 	return result
 }
 
-addUp([], 5)
-addUp([1], 5)
-addUp([1,2,6,8], 5)
-addUp([1,2,4,3], 5)
+console.log(addUp([], 5))
+console.log(addUp([1], 5))
+console.log(addUp([1,2,6,8], 5))
+console.log(addUp([1,2,4,3], 5))
 ```
 
 Output:
@@ -101,8 +103,10 @@ Output:
 
 #### Solution 2: Sorting and using pointers
 
-* Time complexity: O(nlogn) or logarithmic
-* Space complexity: O(1) or constant
+* Time complexity: `O(n log n)`, which is **linearithmic**, not logarithmic. The sort dominates: a logarithmic
+  algorithm would not look at every element, and this one sorts all of them.
+* Space complexity: `O(n)`. The pointer walk itself is constant, but `[...arr]` copies the whole array before
+  sorting it, which is the price of not mutating the caller's input.
 
 ```js
 function addUp(arr, target) {
@@ -131,14 +135,14 @@ function addUp(arr, target) {
 	return result
 }
 
-addUp([], 5)
-addUp([1], 5)
-addUp([1,2,6,8], 5)
-addUp([1,2,4,3], 5)
+console.log(addUp([], 5))
+console.log(addUp([1], 5))
+console.log(addUp([1,2,6,8], 5))
+console.log(addUp([1,2,4,3], 5))
 
 // Extra tests
-addUp([1,2,4,3,1,5], 5)
-addUp([1,2,4,3,6,1,8,10,9], 10)
+console.log(addUp([1,2,4,3,1,5], 5))
+console.log(addUp([1,2,4,3,6,1,8,10,9], 10))
 ```
 
 Output:
@@ -176,14 +180,14 @@ function addUp(arr, target) {
 	return result
 }
 
-addUp([], 5)
-addUp([1], 5)
-addUp([1,2,6,8], 5)
-addUp([1,2,4,3], 5)
+console.log(addUp([], 5))
+console.log(addUp([1], 5))
+console.log(addUp([1,2,6,8], 5))
+console.log(addUp([1,2,4,3], 5))
 
 // Extra tests
-addUp([1,2,4,3,1,5], 5)
-addUp([1,2,4,3,6,1,8,10,9], 10)
+console.log(addUp([1,2,4,3,1,5], 5))
+console.log(addUp([1,2,4,3,6,1,8,10,9], 10))
 ```
 
 Output:
@@ -197,7 +201,12 @@ Output:
 [ [ 6, 4 ], [ 8, 2 ], [ 9, 1 ] ]
 ```
 
-<!-- ---
+---
+
+## Sorting first, and what `.sort()` does to your input
+
+This section was commented out in the file, so none of it rendered on GitHub, which is a shame because the
+part about `.sort()` mutating is the thing people get caught by.
 
 Now, let's address the case with an `ordered array`.
 
@@ -217,8 +226,8 @@ console.log(arr1)
 
 Result:
 ```
-[1, 3, 4, 6]
-[4, 1, 3, 6]
+[ 1, 3, 4, 6 ]
+[ 4, 1, 3, 6 ]
 ```
 
 **IMPORTANT:** We are going to see `Data Immutability` in other section, but, until then, keep in mind...
@@ -241,8 +250,8 @@ console.log(arr1)
 
 Result
 ```
-[1, 3, 4, 6]
-[1, 3, 4, 6]
+[ 1, 3, 4, 6 ]
+[ 1, 3, 4, 6 ]
 ```
 
 *Quick note about .sort()*
@@ -266,6 +275,7 @@ orderComparing: ${orderComparing}
 
 Output:
 ```
+
 orderWithSort: 1,10,12,3,4,6,7,8,8,9,9
 
 orderComparing: 1,3,4,6,7,8,8,9,9,10,12
@@ -312,8 +322,10 @@ Processing 1 - 12
 Processing 1 - 10
 Processing 3 - 10
 Processing 3 - 9
-
-[3, 9]
-
-[1, 3, 4, 6, 7, 8, 8, 9, 10, 12]
-``` -->
+[ 3, 9 ]
+[
+   1, 3, 4, 6,  7,
+   8, 8, 9, 9, 10,
+  12
+]
+```

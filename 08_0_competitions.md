@@ -71,11 +71,11 @@ const gamesPlayed = [
 // If the first Team of the subarray won it would be 1 if not 0
 const gamesResults = [0, 1, 1]
 
-winnerTeam(gamesPlayed, gamesResults)
+console.log(winnerTeam(gamesPlayed, gamesResults))
 ```
 
 Output:
 
 ```
-'Team2'
+Team2
 ```

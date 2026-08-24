@@ -1,4 +1,4 @@
-import area from './formulas/area'
+import area from './formulas/area.js'
 
 const formulas = {
     area

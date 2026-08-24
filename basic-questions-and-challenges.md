@@ -24,8 +24,8 @@ function isEven(num) {
   return (num % 2 === 0);
 }
 
-isEven(1); // false
-isEven(8); // true
+console.log(isEven(1)); // false
+console.log(isEven(8)); // true
 ```
 
 Alternatively, you can be asked to check if the number is odd, or, if it is even or odd.
@@ -35,8 +35,8 @@ function isEvenOrOdd(num) {
   return (num % 2 === 0 ? 'even' : 'odd');
 }
 
-isEvenOrOdd(1); // odd
-isEvenOrOdd(8); // even
+console.log(isEvenOrOdd(1)); // odd
+console.log(isEvenOrOdd(8)); // even
 ```
 
 ## Check if number is prime
@@ -46,11 +46,13 @@ A prime number is a number that has just 2 factors: 1 and the number itself.
 
 Examples:
 * 4 is not a prime number since it can be divided by 1, 4 but also 2
-* 6 is not a primer number since it can be divided by 1, 6 byt also 2 and 3
+* 6 is not a prime number since it can be divided by 1 and 6, but also 2 and 3
 
 Given a number as limit, loop one by one checking if the number is prime.
 
-You will start at `2` and check until `one number less than the own number`. So, if you are looking for prime numbers in a limit of 10, you will start with 2 and go up until 9.
+You will start at `2` and check every candidate up to and including the limit, and for each one you test
+divisors from 2 up to one less than the candidate. So with a limit of 10 you test 2 through 10, and 10 itself
+is checked and rejected.
 
 ```js
 function printPrimes(limit) {
@@ -98,11 +100,15 @@ function drawStaircase(limit) {
 }
 
 drawStaircase(4);
+```
 
-// *
-// **
-// ***
-// ****
+Result:
+
+```
+*
+**
+***
+****
 ```
 
 ## Create a XMAS Tree
@@ -134,6 +140,41 @@ Result:
 *************
 ```
 
-Alternatively, you can use `string.repeat(number)`
+Alternatively, you can use `string.repeat(number)`, but watch the arithmetic, because the two are off by one
+from each other.
 
-Instead of this `Array(level + (level - 1) + 1).join('*')` use this `'*'.repeat(level + (level - 1) + 1)`
+`Array(n).join('*')` puts a separator BETWEEN n empty slots, so it gives you **n - 1** stars.
+`'*'.repeat(n)` gives you **n**. Swapping one for the other without adjusting the count adds a star per level
+and the tree stops being a tree. Measured on `drawXmasTree(4)`:
+
+| level | `Array(n).join('*')` | `'*'.repeat(n)`, same n |
+| --- | --- | --- |
+| 1 | 1 star | 1 star |
+| 2 | 3 stars | 4 stars |
+| 3 | 5 stars | 6 stars |
+| 4 | 7 stars | 8 stars |
+
+So the replacement is `'*'.repeat(level + (level - 1))`, dropping the `+ 1` that `Array().join()` needed:
+
+```javascript
+function drawXmasTree(limit) {
+  for (let level = 1; level <= limit; level++) {
+    const spacing = ' '.repeat(limit - level);
+    console.log(spacing + '*'.repeat(level + (level - 1)));
+  }
+}
+
+drawXmasTree(4);
+```
+
+Result:
+
+```
+   *
+  ***
+ *****
+*******
+```
+
+`Array(limit - level + 1).join(' ')` becomes `' '.repeat(limit - level)` for exactly the same reason. Both
+forms are fine; mixing their arithmetic is not.

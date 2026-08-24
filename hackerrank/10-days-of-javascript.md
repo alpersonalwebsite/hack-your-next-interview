@@ -1,11 +1,12 @@
 # 10 days of JavaScript 
-These set is really basi;, however, I will include some examples, mostly, those that I can use as triggers to address other topics or `better design practices`.
+This set is really basic, however, I will include some examples, mostly the ones I can use as triggers to address other topics or `better design practices`.
 
 ## Day 1: Let and const
 
 Define constants and output the `area` and `perimeter` values given `r` radius of a `circle`.
 
 ```javascript
+// check: skip a fragment of HackerRank's own template; readLine() is theirs, not ours
 // ...
   const PI = Math.PI;
   const  r = readLine();
@@ -58,8 +59,10 @@ console.log(result)
 ```
 
 Output:
-`Not A`
 
+```
+Not A
+```
 But... What happens if we want to execute "some amount of logic", setting, for example, the value of our expression to a boolean, `true`, and checking if one our cases logic results in true.
 
 Example:
@@ -127,6 +130,7 @@ We have a class (`Rectangle`) and we want to...
 
 Code:
 ```javascript
+// check: continues onto the Rectangle class defined in the block above
 //1
 Rectangle.prototype.area = function() {
   return this.w * this.h
@@ -152,26 +156,28 @@ Things to retain from  this exercise...
 
 Example: `function declaration` is hoisted
 
-Output: `[object Object] { ... }`
-
-Code;
 ```javascript
 const rectangle = new Rectangle()
 function Rectangle() {}
 console.log(rectangle)
 ```
 
+Output:
 
-Example: `class declaration` is NOT hoisted
+```
+Rectangle {}
+```
 
-Output: `"ReferenceError: Cannot access 'Rectangle' before initialization`
+
+Example: `class declaration` is NOT hoisted, so the same shape throws
+`ReferenceError: Cannot access 'Rectangle' before initialization`
 
 Code:
 ```javascript
+// check: throws ReferenceError
 const rectangle = new Rectangle()
 class Rectangle {}
 console.log(rectangle)
-
 ```
 3. We use `super()` 
 > When used in a constructor, the super keyword appears alone and must be used before the this keyword is used. The super keyword can also be used to call functions on a parent object.
@@ -246,6 +252,7 @@ Great! We are getting closer. However...
 
 Going back to the challenge...
 ```javascript
+// check: skip the pattern on its own, shown for reading rather than running
 ^([aeiou]).*\1$
 ```
 In our `script` we could use either: `test(sequence)` or `match(regEx)`; however, since we don't want to retrieve a "sub-sequence" or "sub-string" but if it matches or not, we are going to use `test()` which also performs better than `match()`.
@@ -256,6 +263,7 @@ All are going to produce the same "regular expression", however, if you are aske
 
 **Literal notation** (both options)
 ```javascript
+// check: skip two spellings of one declaration, side by side on purpose
 const regex = /^([aeiou]).*\1$/
 
 // OR
@@ -298,14 +306,25 @@ console.log(match)
 
 Result: `null`
 
-And, if we change the sequence (string) to:
+And, if we change the sequence (string) so that it does match:
+
 ```javascript
 const sequence = 'axxxa'
+const regex = /^([aeiou]).*\1$/
+
+console.log(sequence.match(regex))
 ```
 
 Result:
+
 ```
-["axxxa", "a"]
+[ 'axxxa', 'a', index: 0, input: 'axxxa', groups: undefined ]
 ```
+
+Worth looking at properly, because `match()` returns more than people expect. Element 0 is the whole match,
+element 1 is the first capturing group (the vowel that had to appear at both ends), and then it carries
+`index`, the original `input`, and `groups` for named groups, which is `undefined` here because this pattern
+has none. That is the difference from `test()`: you get the match data, and you pay for building it, which is
+why `test()` is the right call when all you want is the boolean.
 
 ---

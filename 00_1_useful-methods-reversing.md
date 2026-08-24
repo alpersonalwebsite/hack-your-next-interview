@@ -94,7 +94,7 @@ gnirts a m'I
 ## Solution 4
 
 This is similar to the previous example, but using the elegant syntax of `for...of`.
-If you don´t need to move "your pointer" several indexes (for example i + 2) on each iteration, this should be the preferred solution to prevent typos.
+If you don't need to move "your pointer" several indexes (for example i + 2) on each iteration, this should be the preferred solution to prevent typos.
 
 Example:
 ```javascript
@@ -102,7 +102,7 @@ const str1 = "I'm a string";
 
 const reverseString = (str) => {
   let results = '';
-  for(char of str) {
+  for (const char of str) {
     results = char + results;
   }
   return results;
@@ -124,9 +124,9 @@ Then, convert back to number and multiply the result by its sign with `Math.sign
 Example:
 ```javascript
 const reverseNumber = (num) => {
-  let converted = num.toString();
+  const converted = num.toString();
   let results = '';
-  for(char of converted) {
+  for (const char of converted) {
     results = char + results;
   }
   return parseInt(results) * Math.sign(num);
@@ -172,5 +172,5 @@ console.log(reverseArray(arr1))
 
 Result:
 ```
-[6, 5, 4, 3, 2, 1]
+[ 6, 5, 4, 3, 2, 1 ]
 ```

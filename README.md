@@ -1,35 +1,68 @@
 # FullStack and FrontEnd job interview quick notes
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/alpersonalwebsite/hack-your-next-interview.svg)](https://greenkeeper.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
-## Table of Contents
+Notes on getting through a JavaScript interview: what the process usually looks like, what to watch for on the
+other side of the table, and worked answers to the challenges that keep coming up.
+
+**Every code sample here runs, and every documented output is checked.** `npm test` extracts each sample,
+executes it, and compares what it prints against what the page says it prints. That is not decoration: when
+the check was first added, six samples did not run at all and most of the documented output had been captured
+in a browser console rather than in node.
+
+```sh
+npm test
+```
+
+## Table of contents
+
+The reading order, and the numbering, are the file names. Nothing here is a prerequisite for anything else, so
+skip to whatever you are being asked about.
+
+### The process
 
 - [Intro](#intro)
 - [Brief personal advice](#brief-personal-advice)
 - [The Interview Process](#the-interview-process)
 - [Red Flags](#red-flags)
 
-- Technical resources
-  * [Useful methods](./00_0_useful-methods.md)
-  * [Reversing without reverse() method](./00_1_useful-methods-reversing.md)
-  * [Sorting without sort() method](00_1_useful-methods-sorting.md)
+### Reference
 
-  * Data Structures
-    + [Queue and Stack](../../../data-structures-and-algorithms/blob/master/05_0_queue-and-stack.md)
-    + [Linked List](../../../data-structures-and-algorithms/blob/master/04_0_linked-list.md)
-    + [Hash Table](../../../data-structures-and-algorithms/blob/master/03_0_hash-table.md)
+| page | what is in it |
+| --- | --- |
+| [What is the output...?](./00_0_what-is-the-output.md) | scope, hoisting, coercion and `this`, the "what does this print" genre |
+| [Useful methods](./00_0_useful-methods.md) | arrays, strings and objects, with which ones mutate |
+| [Reversing without `reverse()`](./00_1_useful-methods-reversing.md) | six ways, for strings, numbers and arrays |
+| [Sorting without `sort()`](./00_1_useful-methods-sorting.md) | merging two sorted arrays, then merge sort, and what `shift()` costs |
 
-  * Code Challenges
-    + [Fibonacci](./01_0_fibonacci.md)
-    + [FizzBuzz](./02_0_fizzbuzz.md)
-    + [Palindromes](./02_0_palindromes.md)
-    + [Occurrences](./03_0_occurrences.md)
-    + [Anagrams](./04_0_anagrams.md)
-    + [Produce X output](./05_0_produce_x_output.md)
-    + [Recursion](./06_0_recursion.md)
-    + [Multidimensional Arrays](./07_0_multidimensional-arrays.md)
+### Data structures
 
+These live in a separate repository, since they are useful well beyond interviews.
+
+- [Queue and Stack](../../../data-structures-and-algorithms/blob/master/05_0_queue-and-stack.md)
+- [Linked List](../../../data-structures-and-algorithms/blob/master/04_0_linked-list.md)
+- [Hash Table](../../../data-structures-and-algorithms/blob/master/03_0_hash-table.md)
+
+### Code challenges
+
+| challenge | notes |
+| --- | --- |
+| [Fibonacci](./01_0_fibonacci.md) | three solutions, with the complexity of each measured rather than asserted |
+| [FizzBuzz](./02_0_fizzbuzz.md) | and the off-by-one that makes it look right |
+| [Palindromes](./02_0_palindromes.md) | four solutions, plus the normalising step the requirement needs |
+| [Occurrences](./03_0_occurrences.md) | highest frequency, duplicates, unique characters, array subsets |
+| [Anagrams](./04_0_anagrams.md) | three solutions, string and hash-table based |
+| [Produce X output](./05_0_produce_x_output.md) | building a message from available characters, and finding pairs that sum to a target |
+| [Recursion](./06_0_recursion.md) | fibonacci and factorial, with where each one breaks |
+| [Multidimensional arrays](./07_0_multidimensional-arrays.md) | flattening to any depth, and a depth-weighted sum |
+| [Competitions](./08_0_competitions.md) | finding the winning team from two arrays |
+| [Basic questions and challenges](./basic-questions-and-challenges.md) | swaps, even/odd, primes, staircases, a tree |
+| [Maximum profit](./several-challenges-not-yet-classified.md) | buy low and sell high, quadratic then linear |
+
+### HackerRank
+
+- [HackerRank notes](./hackerrank/README.md), covering days 1, 2, 5 and 7 of *10 days of JavaScript*, plus two
+  worked examples of splitting a small project into modules
 
 ## Intro
 
@@ -37,14 +70,14 @@ A few days ago, I quit my job; after a weekend of pseudo-leisure, I started appl
 
 Given that several friends and colleagues asked me about my experiences during this process and in view of frequently requests related to `How to Hack Interviews`, I decided to setup this repo with the aim of sharing some recurrent topics, "code exercises/challenges" and experiences (including a few crazy ones as colorful anecdotes) to make easier theirs (and yours) `Job Hunt` and `Interview Process`.
 
-**Important note:** This is an ongoing work among several others... So... There´s no periodicity commitment.
+**Important note:** This is an ongoing work among several others... So... There's no periodicity commitment.
 
 
 ## Brief personal advice
 
 No matter HOW much you like the vacancy and your interviewers, and probably against the "wise general guidance", I strongly recommend you to generate some "friction" or "conflict" with whom would be your co-workers during the `on-site meeting`. Please, `nothing too big` (if you want to obtain the job) nor persistent. You can over-speak **once** and check their reaction. Put particular heed to facial expressions and shoulder movements. *And keep in mind the following:* do it in the middle of the conversation, having enough time to go back to a peaceful and sympathetic state.
 
-Yes, yes... I´m pretty sure you are convinced that I finally went crazy, nonetheless, let me first explain the `why` before you pronounce sentence. 
+Yes, yes... I'm pretty sure you are convinced that I finally went crazy, nonetheless, let me first explain the `why` before you pronounce sentence. 
 
 We, `humans`, are complex and fluctuating beings. Accept it or perish!
 
@@ -69,7 +102,7 @@ Know how would they react when things are not going as expected and discomfort m
 Once you have been hired...? 
 Once you are sunk in bitterness typing a quickly 2-weeks-notice...? 
 
-That´s too late! 
+That's too late! 
 
 Fail is part of our human condition, although you must take certain precautions if you want to find a nice Human group, avoid toxic environments and develop a career.
 
@@ -114,15 +147,15 @@ Expected time: *around 1 hour*.
 
 ## Red Flags
 
-I always say I´m interviewing the Company as they do it with me; perhaps, in an even deeper way. You should do the same! Remember that Interviews are a dual process and you should dispel all your doubts.
+I always say I'm interviewing the Company as they do it with me; perhaps, in an even deeper way. You should do the same! Remember that Interviews are a dual process and you should dispel all your doubts.
 
 What are "Red Flags"...?
 For me, behaviors that go against my principles, manners or that could affect the daily work relationship or "workspace peace".
 
-1. When they don´t look at your eyes or express tension through their bodies
+1. When they don't look at your eyes or express tension through their bodies
 2. When there is no racial/cultural mixture
 3. When those chosen to interview you seem unprepared
 4. When they try to show you how good they are or set some kind of "minimum bar"
 5. When the technical people commit technical mistakes
-6. When they don´t have a clear schedule pre-shared letting you know who are going to interview them, what positions they hold and the proper timeline for each interview
+6. When they don't have a clear schedule pre-shared letting you know who is going to interview you, what positions they hold and the proper timeline for each interview
 7. When you asked about the Company and all the emphasis is on the technological flank, without meaningful mentions to the **Company Culture and Values**

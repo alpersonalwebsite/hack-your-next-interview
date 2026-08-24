@@ -10,7 +10,97 @@ Example: [1,5,10,20] and [6,80,99,100,1001] should return [1,5,6,10,20,80,99,100
 
 One quick note:
 Avoid `Selection Sort` and `Bubble Sort` since you will end with a `quadratic solution` O(n^2) or O(n*m) which should not be acceptable from a performance point of view.
-If you don´t know these "sorting algorithms", they are nested for loops implementations (at a high level).
+If you don't know these "sorting algorithms", they are nested for loops implementations (at a high level).
+
+**And then hold the merge below to the same standard, because for a long time it failed it.** The version in
+this page uses `shift()` to take the front element off an array, and `shift()` is not free: removing index 0
+means every remaining element moves down one, so a single `shift()` is O(n) and a merge built out of them is
+quadratic. Measured, merging two sorted arrays of n elements each:
+
+| n | time |
+| --- | --- |
+| 20,000 | 48.4 ms |
+| 40,000 | 207.6 ms |
+| 80,000 | 814.8 ms |
+
+Double the input, quadruple the time. That is the exact shape this page opens by telling you to avoid, in the
+solution it offers as the alternative.
+
+There is a second problem in the same three characters. `shift()` MUTATES, so the merge eats its arguments:
+
+```javascript
+function mergeAndSort(arr1, arr2) {
+  const result = [];
+  while (arr1.length && arr2.length) {
+    if (arr1[0] > arr2[0]) result.push(arr2.shift())
+    else result.push(arr1.shift())
+  }
+  return [...result, ...arr1, ...arr2];
+}
+
+const a = [1, 5, 10, 20];
+const b = [6, 80, 99, 100, 1001];
+
+console.log(mergeAndSort(a, b));
+// [
+//      1,  5,  6,  10,
+//     20, 80, 99, 100,
+//   1001
+// ]
+
+// Both inputs have been emptied into the result.
+console.log(a, b);
+// [] [ 80, 99, 100, 1001 ]
+
+// So calling it again with the same arrays answers a different question.
+console.log(mergeAndSort(a, b));
+// [ 80, 99, 100, 1001 ]
+```
+
+A function that returns the right answer once and a wrong answer the second time is worse than one that is
+simply slow, because nothing about the call site looks different.
+
+Both problems go away by walking the arrays with an index instead of taking pieces off them. Same idea, same
+line count, linear, and it leaves the caller's data alone:
+
+```javascript
+function mergeAndSort(arr1, arr2) {
+  const result = [];
+  let i = 0;
+  let j = 0;
+
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] > arr2[j]) result.push(arr2[j++])
+    else result.push(arr1[i++])
+  }
+
+  // Whichever array still has elements, the rest of it is already sorted and
+  // already larger than everything pushed so far, so it goes on the end as-is.
+  return [...result, ...arr1.slice(i), ...arr2.slice(j)];
+}
+
+const a = [1, 5, 10, 20];
+const b = [6, 80, 99, 100, 1001];
+
+console.log(mergeAndSort(a, b));
+// [
+//      1,  5,  6,  10,
+//     20, 80, 99, 100,
+//   1001
+// ]
+console.log(mergeAndSort(a, b));
+// [
+//      1,  5,  6,  10,
+//     20, 80, 99, 100,
+//   1001
+// ]
+console.log(a, b);
+// [ 1, 5, 10, 20 ] [ 6, 80, 99, 100, 1001 ]
+```
+
+The `shift()` version stays below, because the walkthrough that follows explains the merge by showing the two
+arrays shrinking, and that is genuinely the clearer way to SEE what a merge does. Read it as the explanation
+and use the indexed one.
 
 Example: **Case 1**
 ```javascript
@@ -37,7 +127,11 @@ console.log(mergeAndSort(array1, array2));
 
 Result:
 ```
-[ 1, 5, 6, 10, 20, 80, 99, 100, 1001 ]
+[
+     1,  5,  6,  10,
+    20, 80, 99, 100,
+  1001
+]
 ```
 
 Nothing too complex or difficult to understand. But, you could be a little confused with the following line:
@@ -49,7 +143,7 @@ return [...result, ...arr1, ...arr2];
 For this, first we have to go back to our while loop. Feel free to put a logger function inside it, logging on each loop iteration the new "state" or values (aka, elements) that both arrays are holding.
 
 Example logs result:
-```javascript
+```
 [ 5, 10, 20 ] [ 6, 80, 99, 100, 1001 ]
 [ 10, 20 ] [ 6, 80, 99, 100, 1001 ]
 [ 10, 20 ] [ 80, 99, 100, 1001 ]
@@ -60,16 +154,16 @@ Example logs result:
 *What is the main logic of our iteration...?*
 We are comparing the first element of each array, and pushing the lowest one into our queue or result array.
 
-The while loop will execute or iterate while both conditions are true... Or what´s the same, until one of the arrays has no more elements (or it´s empty).
+The while loop will execute or iterate while both conditions are true... Or what's the same, until one of the arrays has no more elements (or it's empty).
 
 Remember that in every loop, we remove one element of either array1 or array2. So, after the 5 cycle (in our example), our while evaluates the condition and, since one of our arrays is empty, it passes to the next step which is returning.
 
 But, as you can see we still have several elements in one of our arrays:
-```javascript
+```
 [] [ 80, 99, 100, 1001 ]
 ```
 
-We are working with 2 sorted arrays. For this example, once we exit the loop, it doesn´t matter which array still have elements: always we will have one array empty and the other with some values.
+We are working with 2 sorted arrays. For this example, once we exit the loop, it doesn't matter which array still have elements: always we will have one array empty and the other with some values.
 
 ```
 [] [ elements ]
@@ -80,7 +174,7 @@ Now, you are probably thinking... "Well, I should determine which is empty and a
 *Great! You got it!*
 There are many ways of checking which is not the empty array and adding its content to the queue or result array, however, the easiest and cleanest one comes from the hands of es2015, using the `spread operator` (...)
 
-Let´s see first a conceptual example:
+Let's see first a conceptual example:
 ```
 1 + 0 + 2 = 3
 
@@ -100,7 +194,7 @@ We return a new array which is going to have:
 * THIRD: all the elements of arr2
 Yes! The order is important since we are working with sorted elements or values! Well, we can reduce the logic to: always start spreading result or what we have in our queue.
 
-As we saw in our conceptual example, it doesn´t matter if one or all the arrays are empty. Empty arrays cannot spread elements, so, in our example, arr1 which is an empty collection will not add any element.
+As we saw in our conceptual example, it doesn't matter if one or all the arrays are empty. Empty arrays cannot spread elements, so, in our example, arr1 which is an empty collection will not add any element.
 
 Sometimes the first array is going to be empty, other times the second. You can avoid several lines of code spreading the values of the 3 arrays without having to check which array has elements and add them to the result.
 
@@ -191,17 +285,17 @@ Output:
 ```
 
 We invoke the function with 6.
-6 is not strictly equal to 0 so we log in the console and call the same function passing the result of 6 - 1... And so on. Once we reach 0, we return, stopping the function´s execution.
+6 is not strictly equal to 0 so we log in the console and call the same function passing the result of 6 - 1... And so on. Once we reach 0, we return, stopping the function's execution.
 **Important:** You need a "base case" and return to **avoid an infinite loop**.
 
-Let´s go back... Once our `sliceArrayRec(arr)` function received [ 0, 100 ] it returned 2 arrays: [ 0 ] and [ 100 ].
+Let's go back... Once our `sliceArrayRec(arr)` function received [ 0, 100 ] it returned 2 arrays: [ 0 ] and [ 100 ].
 
 Luckily for us, for **Case 1** we created a function, `mergeAndSort(arr1, arr2)` which receives **2 sorted arrays** as input and it returns ONE sorted array. If we pass [ 0 ] and [ 100 ] arguments, the output will be [0, 100].
-Remember: as we have 2 arrays with 1 element each... There´s no need for sort. This, allows us to meet the criteria of `mergeAndSort(arr1, arr2)`
+Remember: as we have 2 arrays with 1 element each... There's no need for sort. This, allows us to meet the criteria of `mergeAndSort(arr1, arr2)`
 1. 2 inputs (aka, parameters): 2 arrays
 2. Both arrays must be sorted
 
-Let´s integrate both function:
+Let's integrate both function:
 ```javascript
 function mergeAndSort(arr1, arr2) {
   const result = [];
@@ -239,7 +333,7 @@ function sliceArrayRec(arr) {
 
 }
 
-sliceArrayRec([1,0,100,5,2]);
+console.log(sliceArrayRec([1,0,100,5,2]));
 ```
 
 Result:
@@ -261,10 +355,10 @@ sliceArrayRec [ 5 ] [ 2 ]
 mergeAndSort [ 5 ] [ 2 ]
 mergeAndSort [ 100 ] [ 2, 5 ]
 mergeAndSort [ 0, 1 ] [ 2, 5, 100 ]
-=> [ 0, 1, 2, 5, 100 ]
+[ 0, 1, 2, 5, 100 ]
 ```
 
-As you can see, I´m logging some "info" in the console to keep things clear and easy.
+As you can see, I'm logging some "info" in the console to keep things clear and easy.
 The first time we invoked our function sliceArrayRec() we will have 2 arrays "as output".
 Then, we call recursively the same function until we reach the condition of 2 arrays with just one element each.
 ```
