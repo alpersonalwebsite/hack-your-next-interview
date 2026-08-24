@@ -1,0 +1,58 @@
+# Runs the sample checker and the offline link check on every push and pull request, and the external
+# link check on a schedule.
+#
+# THE SPLIT BY TIMESCALE is the point. Whether a sample still prints what the page says depends on the
+# code, so it belongs on every push. Whether developer.mozilla.org still answers depends on elapsed
+# TIME, not on commits: this repository went from 2021 to 2026 without one, so a push-triggered
+# external check would have run on the day the links still worked and never again.
+#
+# THE NODE MATRIX is a question rather than thoroughness. The sample checker compares against the exact
+# text `console.log` produces, and that formatting comes from `util.inspect`, which is a Node
+# implementation detail and not specified behaviour: where an 11-element array wraps, the spacing inside
+# `[ 1, 2 ]`, whether object keys are quoted. Every expected value in these notes was captured on one
+# machine, so the matrix is what establishes that the output is a property of the samples.
+
+name: checks
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  schedule:
+    # 06:00 UTC on the first of each month.
+    - cron: '0 6 1 * *'
+  workflow_dispatch:
+
+# Read-only. Neither check writes anything, and the default token grants more than they need.
+permissions:
+  contents: read
+
+jobs:
+  samples:
+    # Skipped on the monthly run: the samples do not rot on a clock, and the scheduled job exists for
+    # the links.
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['18', '20', '22', '24']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: node scripts/check-samples.mjs
+      - run: node scripts/check-links.mjs
+
+  external-links:
+    # Scheduled and manual only. Excluded from pull requests on purpose: a PR should not fail because
+    # somebody else's site is down, and a network check makes a green run depend on the weather.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/check-links.mjs --external

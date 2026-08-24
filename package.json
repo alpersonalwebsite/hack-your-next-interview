@@ -12,7 +12,10 @@
   ],
   "license": "MIT",
   "scripts": {
-    "test": "node scripts/check-samples.mjs"
+    "test": "node scripts/check-samples.mjs && node scripts/check-links.mjs",
+    "test:samples": "node scripts/check-samples.mjs",
+    "test:links": "node scripts/check-links.mjs",
+    "test:links:external": "node scripts/check-links.mjs --external"
   },
   "repository": {
     "type": "git",
