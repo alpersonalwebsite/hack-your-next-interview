@@ -335,7 +335,28 @@ if (failures.length === 0) {
   process.exit(0)
 }
 
-console.error(`\n${failures.length} failure(s):`)
+// A BREAKDOWN BY CATEGORY, printed rather than left to be assembled by hand.
+//
+// This exists because of a specific mistake. A commit message in this branch
+// reported "47 findings in four groups" and listed four counts summing to 46: the
+// total came from this script and was right, the breakdown came from a grep whose
+// pattern list I wrote myself, and the fifth category, `unterminated fence`, was
+// not in that list. A list-driven summary is only as complete as its list, and
+// the author of the list is the last person likely to notice what is missing.
+// Deriving it here means the figure cannot be wrong and cannot omit a category
+// nobody thought of.
+const byCategory = new Map()
+for (const f of failures) {
+  // Drop the backticked specifics so `unrecognised fence tag \`TS\`` and the same
+  // message about another tag land in one bucket.
+  const key = f.message.replace(/`[^`]*`/g, '<x>')
+  byCategory.set(key, (byCategory.get(key) ?? 0) + 1)
+}
+console.error(`\n${failures.length} failure(s) in ${byCategory.size} categor${byCategory.size === 1 ? 'y' : 'ies'}:`)
+for (const [key, n] of [...byCategory].sort((a, b) => b[1] - a[1])) {
+  console.error(`  ${String(n).padStart(4)}  ${key}`)
+}
+
 for (const f of failures) {
   console.error(`\n  ${f.where}: ${f.message}`)
   if (f.detail) console.error(f.detail.replace(/^/gm, '    '))
