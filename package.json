@@ -1,20 +1,25 @@
 {
-  "name": "challenges",
+  "name": "hack-your-next-interview",
   "version": "1.0.0",
-  "description": "",
-  "main": "",
+  "private": true,
+  "description": "Interview prep for fullstack and frontend JavaScript roles: the process and red flags, useful methods, and worked challenges.",
+  "keywords": [
+    "interview",
+    "javascript",
+    "algorithms",
+    "challenges",
+    "notes"
+  ],
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node scripts/check-samples.mjs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alpersonalwebsite/challenges.git"
+    "url": "git+https://github.com/alpersonalwebsite/hack-your-next-interview.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alpersonalwebsite/challenges/issues"
+    "url": "https://github.com/alpersonalwebsite/hack-your-next-interview/issues"
   },
-  "homepage": "https://github.com/alpersonalwebsite/challenges#readme"
+  "homepage": "https://github.com/alpersonalwebsite/hack-your-next-interview#readme"
 }

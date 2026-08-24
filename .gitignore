@@ -1,16 +1,71 @@
-# dependencies
-/node_modules
+# Dependencies. Not anchored with a leading slash, so it also covers the two
+# sub-projects under hackerrank/, which each install their own.
+node_modules/
+.pnp
+.pnp.js
 
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# tests
-test*.*
+# Credentials and secrets. Nothing in these notes needs any, which is exactly
+# when an accidental commit happens.
+#
+# BOTH env glob forms, because neither implies the other. `.env*` is a prefix
+# glob and catches .env, .env.local and .envrc, the last of which direnv reads
+# and people export credentials from. `*.env` is a suffix glob, for names like
+# audit.env. The negation re-includes the one file in the family you are meant to
+# commit, and has to come after the pattern it undoes since the last matching
+# rule wins.
+.env*
+*.env
+!.env.example
+secrets/
+credentials*
+*.pem
+*.key
+
+# SSH private keys, which *.pem and *.key do not cover: a key in its default
+# filename has no extension at all. `id_rsa*` alone is not enough either, because
+# ssh-keygen's default type is ed25519 now rather than rsa (man ssh-keygen:
+# "ed25519 (the default)"). Enumerated rather than globbed as `id_*`, which would
+# also match ordinary source files.
+id_rsa*
+id_ed25519*
+id_ecdsa*
+id_dsa*
+*.ppk
+.ssh/
+
+# Local databases. Both sqlite spellings: the extension is a convention rather
+# than a rule.
+*.sqlite
+*.sqlite3
+*.db
+
+# Build and coverage output.
+/build
+/coverage
+.nyc_output/
+
+# Editor and OS noise.
+.idea/
+.vscode/
+.DS_Store
+__pycache__/
+
+# NOTE ON A RULE THAT USED TO BE HERE: `test*.*`.
+#
+# It ignored every obvious name for a test file. Measured against the previous
+# version of this file: test.js, tests.js, test-utils.js, test.spec.js,
+# src/test.js and hackerrank/tests.md were all ignored, and only a name like
+# checker.test.js escaped, because the glob anchors on "test" at the start.
+#
+# In a repository of interview answers, that quietly prevented committing the one
+# thing that proves an answer works, and it would have swallowed the checker
+# under scripts/ if that had been named differently. Nothing on disk relied on
+# it: `git status --ignored` reported no matching file at the time it was
+# removed, so nothing was being hidden in practice either.
