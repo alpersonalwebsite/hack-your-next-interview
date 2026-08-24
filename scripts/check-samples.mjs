@@ -73,6 +73,11 @@ const failures = []
 const fail = (where, message, detail) => failures.push({ where, message, detail })
 
 const JS_TAGS = new Set(['js', 'javascript'])
+// Tags that are shell or plain text rather than samples: counted and reported,
+// never compiled. Anything outside this set and JS_TAGS is a failure rather than
+// a silent skip, because an unrecognised tag is how a whole file stops being
+// checked while the exit code stays 0.
+const SKIP_TAGS = new Set(['sh', 'text'])
 const RESULT_LINE = /^\s*(#{1,6}\s*)?(result|output|results|and the output will be|example logs result)\s*:?\s*$/i
 // `Result: \`[ 0, 1, 2, 3 ]\`` on a prose line, the third convention these notes
 // use, for a single line of output that does not deserve a whole fenced block.
@@ -168,6 +173,7 @@ let continued = 0
 let claims = 0
 let bare = 0
 let unchecked = 0
+let nonSample = 0
 
 for (const file of files) {
   const text = readFileSync(join(repo, file), 'utf8')
@@ -181,10 +187,14 @@ for (const file of files) {
       bare++
       continue
     }
+    if (SKIP_TAGS.has(b.tag.toLowerCase())) {
+      nonSample++
+      continue
+    }
     if (!JS_TAGS.has(b.tag.toLowerCase())) {
       // Named, never ignored: an unrecognised tag is how a whole file stops
       // being checked while the exit code stays 0.
-      fail(`${file}:${b.line}`, `unrecognised fence tag \`${b.tag}\`; expected js or javascript`)
+      fail(`${file}:${b.line}`, `unrecognised fence tag \`${b.tag}\`; expected js, javascript, or one of ${[...SKIP_TAGS].join(', ')}`)
       continue
     }
 
@@ -315,7 +325,10 @@ console.log(
   `${files.length} notes files: ${total} js block(s), ${ran} ran, ${skipped} skipped as fragments, ` +
     `${threw} asserted to throw, ${continued} continued`,
 )
-console.log(`  output lines matched: ${claims}, silent samples: ${unchecked}, bare fences: ${bare}`)
+console.log(
+  `  output lines matched: ${claims}, silent samples: ${unchecked}, ` +
+    `bare fences: ${bare}, non-sample blocks: ${nonSample}`,
+)
 
 if (failures.length === 0) {
   console.log('no failures')

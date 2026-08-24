@@ -1,4 +1,4 @@
-import formulas from './circle'
+import formulas from './circle/index.mjs'
 const { area } = formulas
 
 const radius = 5
