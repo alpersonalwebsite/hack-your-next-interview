@@ -349,7 +349,14 @@ const byCategory = new Map()
 for (const f of failures) {
   // Drop the backticked specifics so `unrecognised fence tag \`TS\`` and the same
   // message about another tag land in one bucket.
-  const key = f.message.replace(/`[^`]*`/g, '<x>')
+  //
+  // `+ on BOTH ends, not a single backtick. With `/\`[^\`]*\`/g` a triple-backtick
+  // run matches as the first two with an empty middle, orphaning the third:
+  // `unterminated \`\`\` fence` came out as `unterminated <x>\` fence`. The plus
+  // form also collapses a double-backtick span, which the single form turned into
+  // `<x>double<x>`. Verified against every message this script emits, plus a
+  // two-span message, which still buckets as two placeholders rather than one.
+  const key = f.message.replace(/`+[^`]*`+/g, '<x>')
   byCategory.set(key, (byCategory.get(key) ?? 0) + 1)
 }
 console.error(`\n${failures.length} failure(s) in ${byCategory.size} categor${byCategory.size === 1 ? 'y' : 'ies'}:`)
