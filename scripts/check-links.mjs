@@ -98,11 +98,11 @@ for (const file of files) {
     // A GitHub-relative cross-repository link: not a path on disk, so it is only
     // answerable over the network.
     if (target.startsWith('../../../')) {
-      if (!owner) {
-        failures.push(`${file}: cannot check \`${target}\` without knowing the GitHub owner (no usable origin remote)`)
-        continue
-      }
-      const url = `https://github.com/${owner}/${target.replace(/^(\.\.\/)+/, '')}`
+      // The owner is needed only to BUILD the URL, so only --external needs it.
+      // Requiring it unconditionally made the default offline run fail in any
+      // clone whose origin is not a github.com URL, a local path included, which
+      // is measurably what a fresh `git clone /path/to/repo` produces.
+      const url = owner ? `https://github.com/${owner}/${target.replace(/^(\.\.\/)+/, '')}` : null
       remote.push({ file, target, url })
       continue
     }
@@ -141,6 +141,10 @@ console.log(
 if (external) {
   const UNCHECKABLE = new Set([403, 429])
   for (const { file, target, url } of remote) {
+    if (url === null) {
+      unchecked.push(`${file}: ${target} needs the GitHub owner to resolve, and this clone's origin does not give one`)
+      continue
+    }
     const href = url ?? target
     let status = 0
     try {
