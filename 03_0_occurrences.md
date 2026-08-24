@@ -25,8 +25,7 @@ m: 1
 8. No duplicate chars with temporal array
 9. No duplicate chars with hash-table (order not preserved)
 10. Unique characters with hash-table and 2 for loops
-11. Find if array is subset of another array
-11. Find subset in array with hash-table and 2 for loops canceling keys
+11. Find if an array is a subset of another array, with a hash table and cancelling keys
 
 ---
 
@@ -155,9 +154,9 @@ console.log(moreOccurrences('aabbc'));
 Result:
 ```
 9
-["a", "c"]
+[ 'a', 'c' ]
 No duplicates!
-["a", "b"]
+[ 'a', 'b' ]
 ```
 
 ---
@@ -248,7 +247,7 @@ console.log(isDuplicate('180654321198'));
 
 Result:
 ```
-['1', '8']
+[ '1', '8' ]
 ```
 
 If we want to return the `character` with more occurrences OR, in case of multiple with same frequency, the first one, we can do the following...
@@ -409,7 +408,7 @@ And yes...! This approach **does not preserve order** since we are working with 
 ## Solution 10: return unique chars
 
 ```javascript
-function returnUnqiueChars(str) {
+function returnUniqueChars(str) {
   const objectAsTable = {};
   
   for (let char of str) {
@@ -427,7 +426,7 @@ function returnUnqiueChars(str) {
   
 }
 
-console.log(returnUnqiueChars('abbaabbbcd16126661'))
+console.log(returnUniqueChars('abbaabbbcd16126661'))
 ```
 
 ## Result:
@@ -448,7 +447,8 @@ Examples:
 * `[1,2,3,4]` and `[1,2]` -> true
 * `[1,2,3,4]` and `[1,2,2]` -> false (we have just one 2 in our first array)
 
-*Note:* The `second array` always is going to have at least the same length as the second.
+*Note:* The FIRST array is the one that has to contain the other, so it is always at least as long as the
+second. The function checks that itself and returns `false` early when it is not.
 
 ## Solution 11:
 
@@ -504,16 +504,13 @@ console.log(isSubset(arr7, arr8)) // expected true
 
 ```
 false
-
-{1: 2, 2: 1, 3: 1}
-{1: 1}
+{ '1': 2, '2': 1, '3': 1 }
+{ '1': 1 }
 false
-
-{1: 1, 2: 1, 3: 1}
+{ '1': 1, '2': 1, '3': 1 }
 {}
 true
-
-{1: 2, 2: 1, 3: 1}
+{ '1': 2, '2': 1, '3': 1 }
 {}
 true
 ```

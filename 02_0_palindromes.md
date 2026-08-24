@@ -11,6 +11,70 @@ In our case, we need to reverse the string (for this example, the input will alw
 * Converting to `lowercase`
 * Replacing everything that is not a letter from `a-z` or a number from `0-9`
 
+**Read that requirement against the four solutions below, because for a long time they did not meet it.**
+Every one of them compares the string it was handed, character for character, so all four returned `false`
+for `Amore, Roma.`, which is exactly the input this page says should be `true`. Measured before the
+normalising step below was added:
+
+| input | solution 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- | --- |
+| `znnz` | true | true | true | true |
+| `abcdcba` | true | true | true | true |
+| `Amore, Roma.` | **false** | **false** | **false** | **false** |
+
+Nothing was broken in the four algorithms; the missing piece was never written. It is worth separating the
+two jobs rather than folding the cleanup into each solution, because they answer different questions: one is
+"what counts as the same string", which is a decision about your input, and the other is "is this string a
+palindrome", which is the algorithm you are being asked for.
+
+```javascript
+function normalise(str) {
+  return str.toLowerCase().replace(/[^a-z0-9]/g, '')
+}
+
+console.log(normalise('Amore, Roma.'))
+// amoreroma
+
+console.log(normalise('A man, a plan, a canal: Panama!'))
+// amanaplanacanalpanama
+```
+
+With that in front of any of the four, the stated requirement holds. Using solution 4, the preferred one:
+
+```javascript
+function normalise(str) {
+  return str.toLowerCase().replace(/[^a-z0-9]/g, '')
+}
+
+function isPalindrome(str) {
+  let leftPointer = 0
+  let rightPointer = str.length - 1
+
+  while (leftPointer < rightPointer) {
+    if (str[leftPointer] !== str[rightPointer]) return false
+    leftPointer += 1
+    rightPointer -= 1
+  }
+  return true
+}
+
+console.log(isPalindrome(normalise('Amore, Roma.')))
+// true
+console.log(isPalindrome(normalise('znnz')))
+// true
+console.log(isPalindrome(normalise('A man, a plan, a canal: Panama!')))
+// true
+console.log(isPalindrome(normalise('Amore, Rome.')))
+// false
+```
+
+Note what the regex does and does not do. `[^a-z0-9]` runs after `toLowerCase()`, so it needs no `i` flag,
+and it strips accented letters along with the punctuation: `Ávila` normalises to `vila`, not `avila`. For an
+interview answer that is almost always fine, and it is the kind of limit worth saying out loud rather than
+discovering when someone pastes in a name.
+
+The four solutions below deliberately keep taking the string as given, so each one shows only its own idea.
+
 ## Solution 1: with a new string
 
 * Time complexity: O(n^2)
@@ -28,10 +92,10 @@ function isPalindrome(str) {
   return reversedStr === str
 }
 
-isPalindrome('abcdcba')
+console.log(isPalindrome('abcdcba'))
 // true
 
-isPalindrome('abc')
+console.log(isPalindrome('abc'))
 // false
 ```
 
@@ -49,10 +113,10 @@ function isPalindrome(str) {
   return reversedStrArray.join('') === str
 }
 
-isPalindrome('abcdcba')
+console.log(isPalindrome('abcdcba'))
 // true
 
-isPalindrome('abc')
+console.log(isPalindrome('abc'))
 // false
 ```
 
@@ -73,15 +137,15 @@ function isPalindrome(str, index = 0) {
   else return str[index] === str[j] && isPalindrome(str, index + 1)
 }
 
-isPalindrome('abcdcba')
-// 'a' 'a'
-// 'b' 'b'
-// 'c' 'c'
-// 'd' 'd'
+console.log(isPalindrome('abcdcba'))
+// a a
+// b b
+// c c
+// d d
 // true
 
-isPalindrome('abc')
-// 'a' 'c'
+console.log(isPalindrome('abc'))
+// a c
 // false
 ```
 
@@ -99,10 +163,15 @@ function isPalindrome(str, index = 0) {
   return isPalindrome(str, index + 1)
 }
 
-isPalindrome('abcdcba')
+console.log(isPalindrome('abcdcba'))
+// a a
+// b b
+// c c
+// d d
 // true
 
-isPalindrome('abc')
+console.log(isPalindrome('abc'))
+// a c
 // false
 ```
 
@@ -128,10 +197,10 @@ function isPalindrome(str) {
   return true
 }
 
-isPalindrome('abcdcba')
+console.log(isPalindrome('abcdcba'))
 // true
 
-isPalindrome('abc')
+console.log(isPalindrome('abc'))
 // false
 ```
 
