@@ -94,7 +94,7 @@ gnirts a m'I
 ## Solution 4
 
 This is similar to the previous example, but using the elegant syntax of `for...of`.
-If you don´t need to move "your pointer" several indexes (for example i + 2) on each iteration, this should be the preferred solution to prevent typos.
+If you don't need to move "your pointer" several indexes (for example i + 2) on each iteration, this should be the preferred solution to prevent typos.
 
 Example:
 ```javascript

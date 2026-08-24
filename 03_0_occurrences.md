@@ -165,7 +165,7 @@ Let's address some similar challenges.
 
 Find the duplicate character.
 
-If there´s `only ONE duplicate` character and you can use `sort()`
+If there's `only ONE duplicate` character and you can use `sort()`
 Outputs:
 * false
 * the duplicate character
@@ -192,7 +192,7 @@ false
 8
 ```
 
-If we cannot use `sort()`, we should re-utilize the previous data structure: "hash table / dictionary". In this case, since we are expecting *just ONE* repetition, as soon as we find the duplicate character we return (we don´t want to keep iterating once the occurrence is found Remember *performance*).
+If we cannot use `sort()`, we should re-utilize the previous data structure: "hash table / dictionary". In this case, since we are expecting *just ONE* repetition, as soon as we find the duplicate character we return (we don't want to keep iterating once the occurrence is found Remember *performance*).
 
 ## Solution 4
 

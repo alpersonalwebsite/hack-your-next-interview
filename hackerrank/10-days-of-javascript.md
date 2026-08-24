@@ -1,5 +1,5 @@
 # 10 days of JavaScript 
-These set is really basi;, however, I will include some examples, mostly, those that I can use as triggers to address other topics or `better design practices`.
+This set is really basic, however, I will include some examples, mostly the ones I can use as triggers to address other topics or `better design practices`.
 
 ## Day 1: Let and const
 
