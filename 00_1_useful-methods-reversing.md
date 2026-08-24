@@ -102,7 +102,7 @@ const str1 = "I'm a string";
 
 const reverseString = (str) => {
   let results = '';
-  for(char of str) {
+  for (const char of str) {
     results = char + results;
   }
   return results;
@@ -124,9 +124,9 @@ Then, convert back to number and multiply the result by its sign with `Math.sign
 Example:
 ```javascript
 const reverseNumber = (num) => {
-  let converted = num.toString();
+  const converted = num.toString();
   let results = '';
-  for(char of converted) {
+  for (const char of converted) {
     results = char + results;
   }
   return parseInt(results) * Math.sign(num);

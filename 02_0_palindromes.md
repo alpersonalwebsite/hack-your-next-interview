@@ -66,9 +66,9 @@ isPalindrome('abc')
 ```js
 function isPalindrome(str, index = 0) {
   // We want to compare the first and last letters
-  j = (str.length - 1) - index
+  const j = (str.length - 1) - index
   console.log(str[index], str[j])
-  
+
   if (index >= j) return true
   else return str[index] === str[j] && isPalindrome(str, index + 1)
 }
@@ -91,9 +91,9 @@ Depends on the language's compiler
 ```js
 function isPalindrome(str, index = 0) {
   // We want to compare the first and last letters
-  j = (str.length - 1) - index
+  const j = (str.length - 1) - index
   console.log(str[index], str[j])
-  
+
   if (index >= j) return true
   if (str[index] != str[j]) return false
   return isPalindrome(str, index + 1)
@@ -115,12 +115,12 @@ We are just storing our pointers
 
 
 ```js
-function isPalindrome(str, index = 0) {
+function isPalindrome(str) {
   // We want to compare the first and last letters
-  leftPointer = 0
-  rightPointer = str.length - 1
-  
-  while(leftPointer < rightPointer) {
+  let leftPointer = 0
+  let rightPointer = str.length - 1
+
+  while (leftPointer < rightPointer) {
     if (str[leftPointer] !== str[rightPointer]) return false
     leftPointer += 1
     rightPointer -= 1

@@ -5,7 +5,6 @@ const startingTime = performance.now();
 // Start of code
 
 function fibonacci(num) {
-  let results = [];
   if (num == 0) return [0];
   if (num == 1) return [0, 1];
 

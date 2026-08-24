@@ -18,6 +18,7 @@ Default output: `78.53981633974483`
 Having installed the package `esm`, we just add at the top of our root file, in this case `calculations.js`:
 
 ```javascript
+// check: skip an excerpt of calculations.js; needs the esm package installed
 const esmImport = require('esm')(module);
 const { area } = esmImport('./circle').default;
 ```

@@ -34,7 +34,6 @@ Function took 2.880434989929199 milliseconds.
 
 ```JavaScript
 function fibonacci(num) {
-  let results = [];
   if (num == 0) return [0];
   if (num == 1) return [0, 1];
 

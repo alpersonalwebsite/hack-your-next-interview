@@ -49,7 +49,7 @@ return [...result, ...arr1, ...arr2];
 For this, first we have to go back to our while loop. Feel free to put a logger function inside it, logging on each loop iteration the new "state" or values (aka, elements) that both arrays are holding.
 
 Example logs result:
-```javascript
+```
 [ 5, 10, 20 ] [ 6, 80, 99, 100, 1001 ]
 [ 10, 20 ] [ 6, 80, 99, 100, 1001 ]
 [ 10, 20 ] [ 80, 99, 100, 1001 ]
@@ -65,7 +65,7 @@ The while loop will execute or iterate while both conditions are true... Or what
 Remember that in every loop, we remove one element of either array1 or array2. So, after the 5 cycle (in our example), our while evaluates the condition and, since one of our arrays is empty, it passes to the next step which is returning.
 
 But, as you can see we still have several elements in one of our arrays:
-```javascript
+```
 [] [ 80, 99, 100, 1001 ]
 ```
 

@@ -17,6 +17,7 @@ The main file, in this case `calculations.mjs` is executed with the proper `flag
 Since `named exports` are not yet supported, we first `import` and then `destructure`
 
 ```javascript
+// check: skip an import fragment; the runnable version is calculations.mjs itself
 import formulas from './circle'
 const { area } = formulas
 ```
@@ -24,6 +25,7 @@ const { area } = formulas
 ... instead of ...
 
 ```javascript
+// check: skip the form this example deliberately does NOT use
 import { area } from './circle'
 ```
 

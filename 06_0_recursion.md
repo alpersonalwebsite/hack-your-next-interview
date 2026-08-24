@@ -11,8 +11,7 @@ Output or log an array with the Fibonacci sequence until `num` (aka, index). Mor
 ### Solution: 
 
 ```javascript
-function ç(num) {
-  let results = [];
+function fibonacci(num) {
   if (num == 0) return [0];
   if (num == 1) return [0, 1];
 
